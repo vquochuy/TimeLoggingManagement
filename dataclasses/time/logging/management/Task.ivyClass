@@ -1,0 +1,8 @@
+Task #class
+time.logging.management #namespace
+workItem time.logging.management.WorkItem #field
+workItem PERSISTENT #fieldModifier
+summary String #field
+summary PERSISTENT #fieldModifier
+timeSpent Integer #field
+timeSpent PERSISTENT #fieldModifier

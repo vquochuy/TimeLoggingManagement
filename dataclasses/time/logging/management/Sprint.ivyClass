@@ -1,0 +1,10 @@
+Sprint #class
+time.logging.management #namespace
+name String #field
+name PERSISTENT #fieldModifier
+startDate java.util.Date #field
+startDate PERSISTENT #fieldModifier
+endDate java.util.Date #field
+endDate PERSISTENT #fieldModifier
+epic time.logging.management.Epic #field
+epic PERSISTENT #fieldModifier

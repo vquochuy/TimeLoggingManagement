@@ -1,0 +1,6 @@
+HistoryTaskData #class
+time.logging.management.HistoryTask #namespace
+task time.logging.management.Task #field
+task PERSISTENT #fieldModifier
+workItem time.logging.management.WorkItem #field
+workItem PERSISTENT #fieldModifier
