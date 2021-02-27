@@ -1,0 +1,10 @@
+HistoryTaskDialogData #class
+time.logging.management.HistoryTaskDialog #namespace
+task time.logging.management.Task #field
+task PERSISTENT #fieldModifier
+workItem time.logging.management.WorkDate #field
+workItem PERSISTENT #fieldModifier
+sprints java.util.List<time.logging.management.Sprint> #field
+sprints PERSISTENT #fieldModifier
+selectedSprint time.logging.management.Sprint #field
+selectedSprint PERSISTENT #fieldModifier

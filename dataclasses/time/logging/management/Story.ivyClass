@@ -1,0 +1,10 @@
+Story #class
+time.logging.management #namespace
+title String #field
+title PERSISTENT #fieldModifier
+code String #field
+code PERSISTENT #fieldModifier
+point Integer #field
+point PERSISTENT #fieldModifier
+epic time.logging.management.Epic #field
+epic PERSISTENT #fieldModifier

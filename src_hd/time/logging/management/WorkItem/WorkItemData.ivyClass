@@ -1,4 +1,0 @@
-WorkItemData #class
-time.logging.management.WorkItem #namespace
-workItem time.logging.management.WorkItem #field
-workItem PERSISTENT #fieldModifier

@@ -7,26 +7,26 @@ package time.logging.management;
 public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -8381572179085794797L;
+  private static final long serialVersionUID = 2762909243870106427L;
 
-  private time.logging.management.WorkItem workItem;
+  private time.logging.management.WorkDate workDate;
 
   /**
-   * Gets the field workItem.
-   * @return the value of the field workItem; may be null.
+   * Gets the field workDate.
+   * @return the value of the field workDate; may be null.
    */
-  public time.logging.management.WorkItem getWorkItem()
+  public time.logging.management.WorkDate getWorkDate()
   {
-    return workItem;
+    return workDate;
   }
 
   /**
-   * Sets the field workItem.
-   * @param _workItem the new value of the field workItem.
+   * Sets the field workDate.
+   * @param _workDate the new value of the field workDate.
    */
-  public void setWorkItem(time.logging.management.WorkItem _workItem)
+  public void setWorkDate(time.logging.management.WorkDate _workDate)
   {
-    workItem = _workItem;
+    workDate = _workDate;
   }
 
   private java.lang.String summary;
@@ -67,6 +67,26 @@ public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setTimeSpent(java.lang.Integer _timeSpent)
   {
     timeSpent = _timeSpent;
+  }
+
+  private time.logging.management.Story story;
+
+  /**
+   * Gets the field story.
+   * @return the value of the field story; may be null.
+   */
+  public time.logging.management.Story getStory()
+  {
+    return story;
+  }
+
+  /**
+   * Sets the field story.
+   * @param _story the new value of the field story.
+   */
+  public void setStory(time.logging.management.Story _story)
+  {
+    story = _story;
   }
 
 }

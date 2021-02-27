@@ -7,22 +7,27 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
-	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">HistoryTask</ui:define>
+	<ui:composition template="/layouts/full.xhtml">
+		<ui:define name="title">Test</ui:define>
 		<ui:define name="content">
-			<h3>History Tasks
-			</h3>			
+			<h3>
+			This is an <a href="http://developer.axonivy.com/doc/latest/DesignerGuideHtml/ivy.userinterface.html#ivy-htmldialogs">Html Dialog</a> 
+			implemented with JSF and <a href="http://primefaces.org/">Primefaces</a> as widget library
+			</h3>
+			
 			<h:form id="form">
-				<h:panelGrid columns="2">					
-					<p:outputLabel styleClass="input-label" value="Summary" for="Summary"/>
-					<p:inputText value="#{data.task.summary}" required="true" id="Summary"/>					
-									
-					<p:outputLabel styleClass="input-label" value="Time Spent" for="TimeSpent"/>
-					<p:inputNumber value="#{data.task.timeSpent}" required="true" id="TimeSpent"></p:inputNumber>
+				<h:panelGrid columns="2">
+					<f:facet name="header">
+						<p:messages></p:messages>
+					</f:facet>
+		
 					
+					<br />
 					<p:commandButton actionListener="#{logic.close}" value="Proceed" update="form" icon="ui-icon-check" />
+					<p:button value="Danger" styleClass="ui-button-danger" />
 				</h:panelGrid>
 			</h:form>
+			
 		</ui:define>
 	</ui:composition>
 </h:body>

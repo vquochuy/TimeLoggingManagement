@@ -1,0 +1,4 @@
+WorkDateDialogData #class
+time.logging.management.WorkDateDialog #namespace
+workDate time.logging.management.WorkDate #field
+workDate PERSISTENT #fieldModifier
