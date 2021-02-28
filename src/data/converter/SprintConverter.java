@@ -17,15 +17,16 @@ public class SprintConverter implements Converter {
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component,
 			String id) throws ConverterException {
-		if(StringUtils.isBlank(id)) return null;	
-		SprintService sprintService = new SprintService();		
+		if (StringUtils.isBlank(id))
+			return null;
+		SprintService sprintService = new SprintService();
 		return sprintService.getSprint(Integer.valueOf(id));
 	}
 
 	@Override
 	public String getAsString(FacesContext context, UIComponent component,
 			Object value) throws ConverterException {
-		return value.toString() ;
+		return value.toString();
 	}
 
 }

@@ -123,7 +123,9 @@ Hs0 f11 actionTable 'out=in;
 ' #txt
 Hs0 f11 actionCode 'import services.SprintService;
 SprintService sprintService = new services.SprintService();
-in.sprints = sprintService.getSprints();' #txt
+in.sprints = sprintService.getSprints();
+in.workDates = sprintService.getWorkDates();
+' #txt
 Hs0 f11 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 Hs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -140,12 +142,10 @@ Hs0 f2 expr out #txt
 Hs0 f2 280 64 339 64 #arcP
 Hs0 f13 guid 177E426692D33099 #txt
 Hs0 f13 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
-Hs0 f13 method seletedValue(time.logging.management.Sprint) #txt
+Hs0 f13 method seletedValue() #txt
 Hs0 f13 disableUIEvents false #txt
 Hs0 f13 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<time.logging.management.Sprint event> param = methodEvent.getInputArguments();
-' #txt
-Hs0 f13 inParameterMapAction 'out.selectedSprint=param.event;
+<> param = methodEvent.getInputArguments();
 ' #txt
 Hs0 f13 outParameterDecl '<> result;
 ' #txt

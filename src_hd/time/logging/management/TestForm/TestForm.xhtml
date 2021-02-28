@@ -8,45 +8,33 @@
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
 	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">HistoryTask</ui:define>
+		<ui:define name="title">TestForm</ui:define>
 		<ui:define name="content">
-			<h:form id="myForm">
-				<f:facet name="header">
-					<p:messages></p:messages>
-				</f:facet>
-				<h3>History Tasks</h3>
-				<div class="p-field p-col-12 p-md-4">
-					<p:selectOneMenu id="selectMenu"
-						value="#{sprintBean.selectedSprintID}">
-						<f:selectItem itemLabel="Select One" itemValue="" />
-						<f:selectItems value="#{data.sprints}" var="sprint"
-							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
-						<p:ajax event="valueChange" update="dlg3" />
-					</p:selectOneMenu>
-				</div>
-
-				<p:commandButton value="Add" type="button"
-					icon="pi pi-external-link" onclick="PF('dlg3').show()" />
-
+			<h3>
+			This is an <a href="http://developer.axonivy.com/doc/latest/DesignerGuideHtml/ivy.userinterface.html#ivy-htmldialogs">Html Dialog</a> 
+			implemented with JSF and <a href="http://primefaces.org/">Primefaces</a> as widget library
+			</h3>
+			
+			<h:form id="form">
+				<h:panelGrid columns="2">
+					<f:facet name="header">
+						<p:messages></p:messages>
+					</f:facet>
+					
+					<h:inputText value="#{inspectValue.myValue}"></h:inputText>
+					
+					<h:outputText value="#{inspectValue.myValue}"></h:outputText>
+					
+					<br />
+					<p:commandButton actionListener="#{inspectValue.myAction}" value="Proceed" update="form dlg3" icon="ui-icon-check" />
+				</h:panelGrid>
 			</h:form>
-
-			<p:repeat value="#{data.workDates}" var="workDate">
-				<div>
-					<div>#{workDate.name}</div>
-					<p:repeat value="#{workDate.tasks}" var="task">
-						<div>#{task.summary}</div>
-					</p:repeat>
-					<div>#{workDate.sprint.name}</div>
-
-				</div>
-			</p:repeat>
-
 			<p:dialog header="Create Task" widgetVar="dlg3" minHeight="40"
 				width="350" showEffect="fade" id="dlg3">
 				<div class="card">
 					<p:panelGrid columns="2" layout="grid"
 						styleClass="showcase-text-align-center">
-						<h:outputText value="#{sprintBean.selectedSprint.name}" />
+						<h:outputText value="#{inspectValue.myValue}" id="selectedSprint" />
 						<h:outputText value="Content" />
 						<h:outputText value="Content" />
 						<h:outputText value="Content" />
@@ -60,7 +48,6 @@
 					<p:commandButton type="button" value="Yes" style="width: 12rem" />
 				</f:facet>
 			</p:dialog>
-
 		</ui:define>
 	</ui:composition>
 </h:body>
