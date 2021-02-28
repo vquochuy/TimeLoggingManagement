@@ -14,39 +14,42 @@
 				<h3>History Tasks</h3>
 				<div class="p-field p-col-12 p-md-4">
 					<p:outputLabel for="@next" value="Sprint" />
-					<p:selectOneMenu id="group" value="#{inspectValue.mySprint}" converter="sprintConverter">
+					<p:selectOneMenu id="group" value="#{data.selectedSprint}"
+						converter="sprintConverter" label="">
 						<f:selectItem itemLabel="Select One" itemValue="" />
 						<f:selectItems value="#{data.sprints}" var="sprint"
 							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
-						<p:ajax event="valueChange" listener="#{logic.inspectValue}" update="@form dlg3 selectedSprint" />
+						<p:ajax event="valueChange" listener="#{logic.seletedValue(selectedSprint)}"
+							update="dlg3 selectedSprint" />
 					</p:selectOneMenu>
 				</div>
 
 				<p:commandButton value="Add" type="button"
 					icon="pi pi-external-link" onclick="PF('dlg3').show()" />
-					<p:commandButton value="Submit" update="@all"
+				<p:commandButton value="Submit" update="@all"
 					icon="pi pi-external-link" />
+				<p:dialog header="Create Task" widgetVar="dlg3" minHeight="40"
+					width="350" showEffect="fade" id="dlg3">
+					<div class="card">
+						<p:panelGrid columns="2" layout="grid"
+							styleClass="showcase-text-align-center">
+							<h:outputText value="#{data.selectedSprint}" id="selectedSprint" />
+							<h:outputText value="Content" />
+							<h:outputText value="Content" />
+							<h:outputText value="Content" />
+							<h:outputText value="Content" />
+						</p:panelGrid>
+					</div>
+
+					<f:facet name="footer">
+						<p:commandButton type="button" value="No"
+							styleClass="ui-button-flat p-mr-2" style="width: 12rem" />
+						<p:commandButton type="button" value="Yes" style="width: 12rem" />
+					</f:facet>
+				</p:dialog>
 			</h:form>
 
-			<p:dialog header="Create Task" widgetVar="dlg3" minHeight="40"
-				width="350" showEffect="fade" id="dlg3">
-				<div class="card">
-					<p:panelGrid columns="2" layout="grid"
-						styleClass="showcase-text-align-center">
-						<h:outputText value="#{data.selectedSprint}" id="selectedSprint"/>
-						<h:outputText value="Content" />
-						<h:outputText value="Content" />
-						<h:outputText value="Content" />
-						<h:outputText value="Content" />
-					</p:panelGrid>
-				</div>
 
-				<f:facet name="footer">
-					<p:commandButton type="button" value="No"
-						styleClass="ui-button-flat p-mr-2" style="width: 12rem" />
-					<p:commandButton type="button" value="Yes" style="width: 12rem" />
-				</f:facet>
-			</p:dialog>
 		</ui:define>
 	</ui:composition>
 </h:body>

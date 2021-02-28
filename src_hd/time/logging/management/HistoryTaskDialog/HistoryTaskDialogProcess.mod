@@ -140,17 +140,21 @@ Hs0 f2 expr out #txt
 Hs0 f2 280 64 339 64 #arcP
 Hs0 f13 guid 177E426692D33099 #txt
 Hs0 f13 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
-Hs0 f13 method inspectValue() #txt
+Hs0 f13 method seletedValue(time.logging.management.Sprint) #txt
 Hs0 f13 disableUIEvents false #txt
 Hs0 f13 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<> param = methodEvent.getInputArguments();
+<time.logging.management.Sprint event> param = methodEvent.getInputArguments();
+' #txt
+Hs0 f13 inParameterMapAction 'out.selectedSprint=param.event;
 ' #txt
 Hs0 f13 outParameterDecl '<> result;
 ' #txt
 Hs0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>inspectValue()</name>
+        <name>selectedValue</name>
+        <nameStyle>13,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
