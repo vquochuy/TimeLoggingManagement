@@ -7,7 +7,7 @@ package time.logging.management;
 public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 6962577795579384309L;
+  private static final long serialVersionUID = -576766881960532986L;
 
   private java.lang.String name;
 
@@ -87,6 +87,26 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setEpic(time.logging.management.Epic _epic)
   {
     epic = _epic;
+  }
+
+  private java.lang.Integer id;
+
+  /**
+   * Gets the field id.
+   * @return the value of the field id; may be null.
+   */
+  public java.lang.Integer getId()
+  {
+    return id;
+  }
+
+  /**
+   * Sets the field id.
+   * @param _id the new value of the field id.
+   */
+  public void setId(java.lang.Integer _id)
+  {
+    id = _id;
   }
 
 }
