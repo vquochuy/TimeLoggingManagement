@@ -1,5 +1,5 @@
 [Ivy]
-177DDA248C36CA83 3.23 #module
+177DDA248C36CA83 3.20 #module
 >Proto >Proto Collection #zClass
 Tt0 TimeLoggingManagement Big #zClass
 Tt0 B #cInfo
@@ -93,20 +93,30 @@ Tt0 f5 guid 177E7B8616632BBA #txt
 Tt0 f5 requestEnabled true #txt
 Tt0 f5 triggerEnabled false #txt
 Tt0 f5 callSignature start2() #txt
+Tt0 f5 persist false #txt
+Tt0 f5 taskData 'TaskTriggered.ROL=Everybody
+TaskTriggered.EXTYPE=0
+TaskTriggered.EXPRI=2
+TaskTriggered.TYPE=0
+TaskTriggered.PRI=2
+TaskTriggered.EXROL=Everybody' #txt
 Tt0 f5 caseData businessCase.attach=true #txt
+Tt0 f5 showInStartList 1 #txt
 Tt0 f5 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>start2.ivp</name>
+        <name>WorkDateTeam</name>
+        <nameStyle>12,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
 Tt0 f5 @C|.responsibility Everybody #txt
-Tt0 f5 81 209 30 30 -24 17 #rect
+Tt0 f5 81 209 30 30 -43 17 #rect
 Tt0 f5 @|StartRequestIcon #fIcon
 Tt0 f6 targetWindow NEW #txt
 Tt0 f6 targetDisplay TOP #txt
-Tt0 f6 richDialogId time.logging.management.TestForm #txt
+Tt0 f6 richDialogId time.logging.management.WorkDateTeamDialog #txt
 Tt0 f6 startMethod start() #txt
 Tt0 f6 type time.logging.management.TimeLoggingManagementData #txt
 Tt0 f6 requestActionDecl '<> param;' #txt
@@ -117,7 +127,16 @@ Tt0 f6 responseMappingAction 'out=in;
 Tt0 f6 isAsynch false #txt
 Tt0 f6 isInnerRd false #txt
 Tt0 f6 userContext '* ' #txt
-Tt0 f6 168 202 112 44 0 -8 #rect
+Tt0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>WorkDateTeam</name>
+        <nameStyle>12,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Tt0 f6 168 202 112 44 -43 -8 #rect
 Tt0 f6 @|RichDialogIcon #fIcon
 Tt0 f7 type time.logging.management.TimeLoggingManagementData #txt
 Tt0 f7 321 209 30 30 0 15 #rect

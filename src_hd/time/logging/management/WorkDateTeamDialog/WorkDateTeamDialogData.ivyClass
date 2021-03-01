@@ -1,0 +1,8 @@
+WorkDateTeamDialogData #class
+time.logging.management.WorkDateTeamDialog #namespace
+selectedSprint time.logging.management.Sprint #field
+selectedSprint PERSISTENT #fieldModifier
+users java.util.List<ch.ivyteam.ivy.security.internal.User> #field
+users PERSISTENT #fieldModifier
+sprints java.util.List<time.logging.management.Sprint> #field
+sprints PERSISTENT #fieldModifier

@@ -7,7 +7,7 @@ package time.logging.management;
 public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -576766881960532986L;
+  private static final long serialVersionUID = -714239304129207942L;
 
   private java.lang.String name;
 
@@ -29,13 +29,13 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     name = _name;
   }
 
-  private java.util.Date startDate;
+  private java.time.LocalDate startDate;
 
   /**
    * Gets the field startDate.
    * @return the value of the field startDate; may be null.
    */
-  public java.util.Date getStartDate()
+  public java.time.LocalDate getStartDate()
   {
     return startDate;
   }
@@ -44,18 +44,18 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
    * Sets the field startDate.
    * @param _startDate the new value of the field startDate.
    */
-  public void setStartDate(java.util.Date _startDate)
+  public void setStartDate(java.time.LocalDate _startDate)
   {
     startDate = _startDate;
   }
 
-  private java.util.Date endDate;
+  private java.time.LocalDate endDate;
 
   /**
    * Gets the field endDate.
    * @return the value of the field endDate; may be null.
    */
-  public java.util.Date getEndDate()
+  public java.time.LocalDate getEndDate()
   {
     return endDate;
   }
@@ -64,7 +64,7 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
    * Sets the field endDate.
    * @param _endDate the new value of the field endDate.
    */
-  public void setEndDate(java.util.Date _endDate)
+  public void setEndDate(java.time.LocalDate _endDate)
   {
     endDate = _endDate;
   }
@@ -107,6 +107,26 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setId(java.lang.Integer _id)
   {
     id = _id;
+  }
+
+  private java.util.List<time.logging.management.WorkDate> workDates;
+
+  /**
+   * Gets the field workDates.
+   * @return the value of the field workDates; may be null.
+   */
+  public java.util.List<time.logging.management.WorkDate> getWorkDates()
+  {
+    return workDates;
+  }
+
+  /**
+   * Sets the field workDates.
+   * @param _workDates the new value of the field workDates.
+   */
+  public void setWorkDates(java.util.List<time.logging.management.WorkDate> _workDates)
+  {
+    workDates = _workDates;
   }
 
 }

@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+	<ui:composition template="/layouts/full.xhtml">
+		<ui:define name="title">WorkDateTeam</ui:define>
+		<ui:define name="content">
+			<div>
+				<h:form>
+					<div class="p-field p-col-12 p-md-4">
+						<p:selectOneMenu id="selectMenu"
+							value="#{sprintBean.selectedSprintID}">
+							<f:selectItem itemLabel="Select One" itemValue="" />
+							<f:selectItems value="#{data.sprints}" var="sprint"
+								itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
+							<p:ajax event="valueChange" update="selectedSprint" />
+						</p:selectOneMenu>
+					</div>
+				</h:form>
+				<p:outputPanel id="selectedSprint">
+					<p:repeat value="#{sprintBean.selectedSprint.workDates}"
+						var="workDate">
+						<div>
+							<div>#{workDate.name}</div>
+							<p:repeat value="#{workDate.tasks}" var="task">
+								<div>#{task.user.FullName}</div>
+							</p:repeat>
+						</div>
+					</p:repeat>
+				</p:outputPanel>
+			</div>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

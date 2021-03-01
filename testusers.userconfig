@@ -1,2 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<userConfig/>
+<userConfig>
+    <user>
+        <username>dmngo</username>
+        <fullName>Dinh Minh Ngo</fullName>
+        <role>ScrumMaster</role>
+    </user>
+    <user>
+        <username>vqhuy</username>
+        <fullName>Vu Quoc Huy</fullName>
+        <role>Developer</role>
+    </user>
+</userConfig>

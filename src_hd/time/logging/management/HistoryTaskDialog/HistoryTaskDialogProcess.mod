@@ -1,5 +1,5 @@
 [Ivy]
-177DDA4E1458EDD1 3.23 #module
+177DDA4E1458EDD1 3.20 #module
 >Proto >Proto Collection #zClass
 Hs0 HistoryTaskDialogProcess Big #zClass
 Hs0 RD #cInfo
@@ -27,11 +27,21 @@ Hs0 @PushWFArc f8 '' #zField
 Hs0 @GridStep f11 '' #zField
 Hs0 @PushWFArc f12 '' #zField
 Hs0 @PushWFArc f2 '' #zField
-Hs0 @RichDialogMethodStart f13 '' #zField
-Hs0 @RichDialogEnd f14 '' #zField
 Hs0 @GridStep f16 '' #zField
 Hs0 @PushWFArc f17 '' #zField
+Hs0 @RichDialogMethodStart f13 '' #zField
 Hs0 @PushWFArc f15 '' #zField
+Hs0 @RichDialogEnd f14 '' #zField
+Hs0 @RichDialogProcessStart f18 '' #zField
+Hs0 @RichDialogProcessEnd f19 '' #zField
+Hs0 @GridStep f21 '' #zField
+Hs0 @PushWFArc f22 '' #zField
+Hs0 @PushWFArc f20 '' #zField
+Hs0 @RichDialogProcessStart f24 '' #zField
+Hs0 @RichDialogProcessEnd f25 '' #zField
+Hs0 @RestClientCall f26 '' #zField
+Hs0 @PushWFArc f27 '' #zField
+Hs0 @PushWFArc f23 '' #zField
 >Proto Hs0 Hs0 HistoryTaskDialogProcess #zField
 Hs0 f0 guid 177DDA4E151E53F9 #txt
 Hs0 f0 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
@@ -124,13 +134,14 @@ Hs0 f11 actionTable 'out=in;
 Hs0 f11 actionCode 'import services.SprintService;
 SprintService sprintService = new services.SprintService();
 in.sprints = sprintService.getSprints();
-in.workDates = sprintService.getWorkDates();
 ' #txt
 Hs0 f11 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 Hs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>Initialize Work Days</name>
+        <nameStyle>20,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
@@ -140,41 +151,135 @@ Hs0 f12 expr out #txt
 Hs0 f12 109 64 168 64 #arcP
 Hs0 f2 expr out #txt
 Hs0 f2 280 64 339 64 #arcP
+Hs0 f16 actionDecl 'time.logging.management.HistoryTaskDialog.HistoryTaskDialogData out;
+' #txt
+Hs0 f16 actionTable 'out=in;
+out.selectedWorkDate=in.selectedWorkDate;
+' #txt
+Hs0 f16 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f16 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>select workDate</name>
+        <nameStyle>15,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Hs0 f16 184 394 112 44 -44 -8 #rect
+Hs0 f16 @|StepIcon #fIcon
+Hs0 f17 expr out #txt
+Hs0 f17 109 416 184 416 #arcP
+Hs0 f17 0 0.4922333953746373 0 0 #arcLabel
 Hs0 f13 guid 177E426692D33099 #txt
 Hs0 f13 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
-Hs0 f13 method seletedValue() #txt
+Hs0 f13 method selectedWorkDate(time.logging.management.WorkDate) #txt
 Hs0 f13 disableUIEvents false #txt
 Hs0 f13 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
-<> param = methodEvent.getInputArguments();
+<time.logging.management.WorkDate sprint> param = methodEvent.getInputArguments();
 ' #txt
 Hs0 f13 outParameterDecl '<> result;
 ' #txt
 Hs0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
-        <name>selectedValue</name>
-        <nameStyle>13,5,7
+        <name>selectedWorkDate</name>
+        <nameStyle>16,5,7
 </nameStyle>
     </language>
 </elementInfo>
 ' #txt
-Hs0 f13 99 403 26 26 -39 15 #rect
+Hs0 f13 83 403 26 26 -50 15 #rect
 Hs0 f13 @|RichDialogMethodStartIcon #fIcon
+Hs0 f15 expr out #txt
+Hs0 f15 296 416 355 416 #arcP
 Hs0 f14 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 Hs0 f14 guid 177E4268A4E6F559 #txt
 Hs0 f14 355 403 26 26 0 12 #rect
 Hs0 f14 @|RichDialogEndIcon #fIcon
-Hs0 f16 actionDecl 'time.logging.management.HistoryTaskDialog.HistoryTaskDialogData out;
+Hs0 f18 guid 177EC83935E8F209 #txt
+Hs0 f18 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f18 actionDecl 'time.logging.management.HistoryTaskDialog.HistoryTaskDialogData out;
 ' #txt
-Hs0 f16 actionTable 'out=in;
+Hs0 f18 actionTable 'out=in;
 ' #txt
-Hs0 f16 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
-Hs0 f16 184 394 112 44 0 -8 #rect
-Hs0 f16 @|StepIcon #fIcon
-Hs0 f17 expr out #txt
-Hs0 f17 125 416 184 416 #arcP
-Hs0 f15 expr out #txt
-Hs0 f15 296 416 355 416 #arcP
+Hs0 f18 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>getWorkDates</name>
+        <nameStyle>12,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Hs0 f18 83 499 26 26 -39 15 #rect
+Hs0 f18 @|RichDialogProcessStartIcon #fIcon
+Hs0 f19 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f19 355 499 26 26 0 12 #rect
+Hs0 f19 @|RichDialogProcessEndIcon #fIcon
+Hs0 f21 actionDecl 'time.logging.management.HistoryTaskDialog.HistoryTaskDialogData out;
+' #txt
+Hs0 f21 actionTable 'out=in;
+' #txt
+Hs0 f21 actionCode 'import services.SprintService;
+
+SprintService service = new services.SprintService();
+in.workDates = service.getWorkDates();' #txt
+Hs0 f21 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f21 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>get workDates from sprint id</name>
+        <nameStyle>28,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Hs0 f21 144 490 160 44 -77 -8 #rect
+Hs0 f21 @|StepIcon #fIcon
+Hs0 f22 expr out #txt
+Hs0 f22 109 512 144 512 #arcP
+Hs0 f20 expr out #txt
+Hs0 f20 304 512 355 512 #arcP
+Hs0 f24 guid 177ECF80634BC0E3 #txt
+Hs0 f24 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f24 actionDecl 'time.logging.management.HistoryTaskDialog.HistoryTaskDialogData out;
+' #txt
+Hs0 f24 actionTable 'out=in;
+' #txt
+Hs0 f24 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>callJiraApi</name>
+        <nameStyle>11,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Hs0 f24 67 651 26 26 -28 15 #rect
+Hs0 f24 @|RichDialogProcessStartIcon #fIcon
+Hs0 f25 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f25 435 651 26 26 0 12 #rect
+Hs0 f25 @|RichDialogProcessEndIcon #fIcon
+Hs0 f26 clientId 768a98c8-f06c-4564-ae4f-46ce2d50f5d6 #txt
+Hs0 f26 queryParams 'fieldName="Sprint";
+fieldValue="Gravity 21.03.A";
+' #txt
+Hs0 f26 responseCode ivy.log.info(response); #txt
+Hs0 f26 clientErrorCode ivy:error:rest:client #txt
+Hs0 f26 statusErrorCode ivy:error:rest:client #txt
+Hs0 f26 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>callJiraApi</name>
+    </language>
+</elementInfo>
+' #txt
+Hs0 f26 192 642 112 44 -28 -8 #rect
+Hs0 f26 @|RestClientCallIcon #fIcon
+Hs0 f27 expr out #txt
+Hs0 f27 93 664 192 664 #arcP
+Hs0 f23 304 664 435 664 #arcP
 >Proto Hs0 .type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 >Proto Hs0 .processKind HTML_DIALOG #txt
 >Proto Hs0 -8 -8 16 16 16 26 #rect
@@ -193,3 +298,11 @@ Hs0 f13 mainOut f17 tail #connect
 Hs0 f17 head f16 mainIn #connect
 Hs0 f16 mainOut f15 tail #connect
 Hs0 f15 head f14 mainIn #connect
+Hs0 f18 mainOut f22 tail #connect
+Hs0 f22 head f21 mainIn #connect
+Hs0 f21 mainOut f20 tail #connect
+Hs0 f20 head f19 mainIn #connect
+Hs0 f24 mainOut f27 tail #connect
+Hs0 f27 head f26 mainIn #connect
+Hs0 f26 mainOut f23 tail #connect
+Hs0 f23 head f25 mainIn #connect

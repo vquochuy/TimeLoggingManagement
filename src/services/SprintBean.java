@@ -4,7 +4,6 @@ import javax.faces.bean.ManagedBean;
 
 import org.apache.commons.lang.StringUtils;
 
-import ch.ivyteam.ivy.environment.Ivy;
 import time.logging.management.Sprint;
 
 @ManagedBean

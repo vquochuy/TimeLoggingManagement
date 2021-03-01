@@ -10,3 +10,5 @@ selectedSprint time.logging.management.Sprint #field
 selectedSprint PERSISTENT #fieldModifier
 selectedSprintId String #field
 selectedSprintId PERSISTENT #fieldModifier
+selectedWorkDate time.logging.management.WorkDate #field
+selectedWorkDate PERSISTENT #fieldModifier

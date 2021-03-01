@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<restClients/>
+<restClients>
+    <restClient>
+        <uuid>768a98c8-f06c-4564-ae4f-46ce2d50f5d6</uuid>
+        <name>JiraApi</name>
+        <configuration>
+            <uri>https://jira.axonivy.com/jira/rest/api/2/jql/autocompletedata/suggestions</uri>
+            <property>
+                <name>JSON.Deserialization.FAIL_ON_UNKNOWN_PROPERTIES</name>
+                <value>false</value>
+                <password>false</password>
+            </property>
+            <property>
+                <name>username</name>
+                <value>vqhuy</value>
+                <password>false</password>
+            </property>
+            <property>
+                <name>password</name>
+                <value>\u00A5\u00C3\u00C4\u0026\u0019\u0035\u0049\u00CF\u005A\u00F1\u005D\u00D6\u001C\u00D1\u001C\u0047\u00D2\u00C6\u009C\u0014\u0076\u0050\u0044\u00A2\u0008\u003C\u0045\u0013\u001B\u004D\u00FE\u00C0\u003A\u006E\u0051\u00C6\u0050\u00F8\u004C\u00EE\u0027\u00E6\u0070\u00F7\u0069\u0063\u008F\u0016\u0007\u005E\u0006\u00AD\u00AF\u0044\u0051\u002F\u0090\u003D\u00E4\u00A6\u0084\u00A5\u0009\u0012\u003B\u0086\u0060\u00B3\u00AC\u00E0\u003C\u001A\u00ED\u0069\u0012\u0018\u0071\u0082\u004A\u0017</value>
+                <password>true</password>
+            </property>
+            <feature>
+                <class>ch.ivyteam.ivy.rest.client.mapper.JsonFeature</class>
+            </feature>
+            <feature>
+                <class>ch.ivyteam.ivy.rest.client.authentication.HttpBasicAuthenticationFeature</class>
+            </feature>
+        </configuration>
+    </restClient>
+</restClients>

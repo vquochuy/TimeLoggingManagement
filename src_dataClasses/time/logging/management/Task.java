@@ -7,7 +7,7 @@ package time.logging.management;
 public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 2762909243870106427L;
+  private static final long serialVersionUID = -3931729097299125992L;
 
   private time.logging.management.WorkDate workDate;
 
@@ -87,6 +87,26 @@ public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setStory(time.logging.management.Story _story)
   {
     story = _story;
+  }
+
+  private ch.ivyteam.ivy.security.IUser user;
+
+  /**
+   * Gets the field user.
+   * @return the value of the field user; may be null.
+   */
+  public ch.ivyteam.ivy.security.IUser getUser()
+  {
+    return user;
+  }
+
+  /**
+   * Sets the field user.
+   * @param _user the new value of the field user.
+   */
+  public void setUser(ch.ivyteam.ivy.security.IUser _user)
+  {
+    user = _user;
   }
 
 }

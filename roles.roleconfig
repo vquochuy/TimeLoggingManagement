@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <role>
     <identifier>Everybody</identifier>
+    <role>
+        <identifier>Developer</identifier>
+    </role>
+    <role>
+        <identifier>ScrumMaster</identifier>
+    </role>
+    <role>
+        <identifier>ProjectOwner</identifier>
+    </role>
 </role>

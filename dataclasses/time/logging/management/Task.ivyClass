@@ -8,3 +8,5 @@ timeSpent Integer #field
 timeSpent PERSISTENT #fieldModifier
 story time.logging.management.Story #field
 story PERSISTENT #fieldModifier
+user ch.ivyteam.ivy.security.IUser #field
+user PERSISTENT #fieldModifier
