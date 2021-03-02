@@ -3,6 +3,7 @@ package services;
 import java.util.List;
 
 import time.logging.management.Sprint;
+import ch.ivyteam.ivy.business.data.store.search.Filter;
 import ch.ivyteam.ivy.environment.Ivy;
 
 public class SprintIvyRepoService {
@@ -21,8 +22,7 @@ public class SprintIvyRepoService {
 	}
 	
 	public static Sprint getSprint(String id){		
-		Ivy.log().info(id);
-		Sprint sprint = Ivy.repo().find(id, Sprint.class);		
-		return sprint;
+		return Ivy.repo().search(Sprint.class)
+								.textField("id").containsAllWords(id).execute().getFirst();
 	}
 }
