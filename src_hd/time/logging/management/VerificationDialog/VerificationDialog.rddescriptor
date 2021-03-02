@@ -5,9 +5,25 @@
         <name>start</name>
         <description>Default dialog start method.</description>
     </startMethod>
+    <startMethod>
+        <name>start</name>
+        <description></description>
+        <inputParameter>
+            <name>task</name>
+            <description></description>
+            <parameterType>time.logging.management.Task</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </inputParameter>
+        <outputParameter>
+            <name>task</name>
+            <description></description>
+            <parameterType>time.logging.management.Task</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </outputParameter>
+    </startMethod>
     <property>
         <name>guid</name>
-        <value>177E7B341EAFF865</value>
+        <value>177F084C32933871</value>
         <readOnly>true</readOnly>
     </property>
     <property>

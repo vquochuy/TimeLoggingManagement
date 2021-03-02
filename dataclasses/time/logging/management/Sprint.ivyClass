@@ -6,9 +6,9 @@ startDate java.time.LocalDate #field
 startDate PERSISTENT #fieldModifier
 endDate java.time.LocalDate #field
 endDate PERSISTENT #fieldModifier
-epic time.logging.management.Epic #field
-epic PERSISTENT #fieldModifier
-id Integer #field
-id PERSISTENT #fieldModifier
 workDates java.util.List<time.logging.management.WorkDate> #field
 workDates PERSISTENT #fieldModifier
+stories java.util.List<time.logging.management.Sprint> #field
+stories PERSISTENT #fieldModifier
+id String #field
+id PERSISTENT #fieldModifier

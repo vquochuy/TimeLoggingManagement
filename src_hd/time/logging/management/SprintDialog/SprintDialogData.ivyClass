@@ -1,0 +1,6 @@
+SprintDialogData #class
+time.logging.management.SprintDialog #namespace
+sprint time.logging.management.Sprint #field
+sprint PERSISTENT #fieldModifier
+sprints java.util.List<time.logging.management.Sprint> #field
+sprints PERSISTENT #fieldModifier

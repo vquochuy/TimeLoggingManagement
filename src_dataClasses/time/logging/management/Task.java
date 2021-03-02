@@ -7,7 +7,7 @@ package time.logging.management;
 public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -3931729097299125992L;
+  private static final long serialVersionUID = 8274180092290234306L;
 
   private time.logging.management.WorkDate workDate;
 
@@ -107,6 +107,66 @@ public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setUser(ch.ivyteam.ivy.security.IUser _user)
   {
     user = _user;
+  }
+
+  private java.lang.Boolean isVerified;
+
+  /**
+   * Gets the field isVerified.
+   * @return the value of the field isVerified; may be null.
+   */
+  public java.lang.Boolean getIsVerified()
+  {
+    return isVerified;
+  }
+
+  /**
+   * Sets the field isVerified.
+   * @param _isVerified the new value of the field isVerified.
+   */
+  public void setIsVerified(java.lang.Boolean _isVerified)
+  {
+    isVerified = _isVerified;
+  }
+
+  private java.lang.String rejectedReason;
+
+  /**
+   * Gets the field rejectedReason.
+   * @return the value of the field rejectedReason; may be null.
+   */
+  public java.lang.String getRejectedReason()
+  {
+    return rejectedReason;
+  }
+
+  /**
+   * Sets the field rejectedReason.
+   * @param _rejectedReason the new value of the field rejectedReason.
+   */
+  public void setRejectedReason(java.lang.String _rejectedReason)
+  {
+    rejectedReason = _rejectedReason;
+  }
+
+  private java.lang.String paymentKind;
+
+  /**
+   * Gets the field paymentKind.
+   * @return the value of the field paymentKind; may be null.
+   */
+  public java.lang.String getPaymentKind()
+  {
+    return paymentKind;
+  }
+
+  /**
+   * Sets the field paymentKind.
+   * @param _paymentKind the new value of the field paymentKind.
+   */
+  public void setPaymentKind(java.lang.String _paymentKind)
+  {
+    paymentKind = _paymentKind;
   }
 
 }

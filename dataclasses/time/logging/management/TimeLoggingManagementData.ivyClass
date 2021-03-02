@@ -1,2 +1,4 @@
 TimeLoggingManagementData #class
 time.logging.management #namespace
+task time.logging.management.Task #field
+task PERSISTENT #fieldModifier

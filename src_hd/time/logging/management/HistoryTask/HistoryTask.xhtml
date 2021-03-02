@@ -1,0 +1,41 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions"
+	xmlns:pm="http://primefaces.org/mobile">
+<h:body>
+	<ui:composition template="/layouts/full.xhtml">
+		<ui:define name="title">TaskDialog</ui:define>
+		<ui:define name="content">
+			<h:form id="myForm">
+				<h3>History Tasks</h3>
+				<div class="p-field p-col-12 p-md-4">
+					<p:selectOneMenu id="selectMenu"
+						value="#{data.selectedSprintID}">
+						<f:selectItem itemLabel="Select One" itemValue="" />
+						<f:selectItems value="#{data.sprints}" var="sprint"
+							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
+						<p:ajax event="valueChange" listener="#{logic.update}" update="myForm"/>
+					</p:selectOneMenu>
+				</div>
+				<p:commandButton value="Create Task" update="myForm"
+					action="#{logic.nextView('CreateTask')}" id="nextButton" />
+
+				<p:repeat value="#{data.selectedSprint.workDates}" var="workDate">
+					<div>
+						<div>#{workDate.name}</div>
+						<p:repeat value="#{workDate.tasks}" var="task">
+							<div>#{task.summary}</div>
+						</p:repeat>
+						<div>#{workDate.sprint.name}</div>
+					</div>
+				</p:repeat>
+
+			</h:form>
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,14 @@
+HistoryTaskData #class
+time.logging.management.HistoryTask #namespace
+task time.logging.management.Task #field
+task PERSISTENT #fieldModifier
+sprints java.util.List<time.logging.management.Sprint> #field
+sprints PERSISTENT #fieldModifier
+currentView String #field
+currentView PERSISTENT #fieldModifier
+nextView String #field
+nextView PERSISTENT #fieldModifier
+selectedSprint time.logging.management.Sprint #field
+selectedSprint PERSISTENT #fieldModifier
+selectedSprintID String #field
+selectedSprintID PERSISTENT #fieldModifier

@@ -10,3 +10,9 @@ story time.logging.management.Story #field
 story PERSISTENT #fieldModifier
 user ch.ivyteam.ivy.security.IUser #field
 user PERSISTENT #fieldModifier
+isVerified Boolean #field
+isVerified PERSISTENT #fieldModifier
+rejectedReason String #field
+rejectedReason PERSISTENT #fieldModifier
+paymentKind String #field
+paymentKind PERSISTENT #fieldModifier

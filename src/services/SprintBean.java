@@ -8,7 +8,7 @@ import time.logging.management.Sprint;
 
 @ManagedBean
 public class SprintBean {
-	private String selectedSprintID;
+/*	private String selectedSprintID;
 	
 	public String getSelectedSprintID() {
 		return selectedSprintID;
@@ -26,7 +26,7 @@ public class SprintBean {
 			return def;
 		}
 		SprintService sprintService = new SprintService();
-		return sprintService.getSprint(Integer.valueOf(selectedSprintID));
-	}	
+		return sprintService.getSprint(selectedSprintID);
+	}	*/
 	
 }

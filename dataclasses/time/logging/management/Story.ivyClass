@@ -6,5 +6,5 @@ code String #field
 code PERSISTENT #fieldModifier
 point Integer #field
 point PERSISTENT #fieldModifier
-epic time.logging.management.Epic #field
+epic String #field
 epic PERSISTENT #fieldModifier

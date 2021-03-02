@@ -9,18 +9,18 @@ import javax.faces.convert.FacesConverter;
 import org.apache.commons.lang3.StringUtils;
 
 import services.SprintService;
-import time.logging.management.Sprint;
 
-@FacesConverter("sprintConverter")
+@FacesConverter("SprintConverter")
 public class SprintConverter implements Converter {
 
 	@Override
 	public Object getAsObject(FacesContext context, UIComponent component,
 			String id) throws ConverterException {
-		if (StringUtils.isBlank(id))
+		/*if (StringUtils.isBlank(id))
 			return null;
 		SprintService sprintService = new SprintService();
-		return sprintService.getSprint(Integer.valueOf(id));
+		return sprintService.getSprint(id);*/
+		return null;
 	}
 
 	@Override

@@ -1,0 +1,4 @@
+VerificationDialogData #class
+time.logging.management.VerificationDialog #namespace
+task time.logging.management.Task #field
+task PERSISTENT #fieldModifier

@@ -72,7 +72,7 @@ Ws0 f6 actionTable 'out=in;
 Ws0 f6 actionCode 'import time.logging.management.Sprint;
 import services.SprintService;
 SprintService sprintService = new services.SprintService();
-in.sprints = sprintService.getSprints();
+in.sprints = sprintService.loadSprints();
 in.selectedSprint = new Sprint();' #txt
 Ws0 f6 type time.logging.management.WorkDateTeamDialog.WorkDateTeamDialogData #txt
 Ws0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

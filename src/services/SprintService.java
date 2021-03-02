@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
+
 import time.logging.management.Sprint;
 import time.logging.management.Task;
 import time.logging.management.WorkDate;
@@ -15,7 +17,7 @@ import ch.ivyteam.ivy.security.IUser;
 
 public class SprintService {
 
-	public List<Sprint> getSprints() {
+	/*public List<Sprint> getSprints() {
 		List<Sprint> sprints = new ArrayList<>();
 		Sprint sprint1 = new Sprint();
 		sprint1.setName("Sprint 1");
@@ -34,13 +36,13 @@ public class SprintService {
 		sprint1.setWorkDates(workDates1);
 		sprint2.setWorkDates(workDates2);
 		return sprints;
-	}
+	}*/
 
-	public Sprint getSprint(Integer id) {
+/*	public Sprint getSprint(Integer id) {
 		return getSprints().stream().filter(e -> e.getId() == id).findFirst()
 				.get();
 	}
-
+*/
 	public List<WorkDate> getWorkDates() {
 		List<WorkDate> workDates = new ArrayList<>();
 		Task task1 = new Task();
@@ -76,9 +78,9 @@ public class SprintService {
 		return workDates;
 	}
 
-	public List<WorkDate> getWorkDates(Integer sprintID) {
+/*	public List<WorkDate> getWorkDates(Integer sprintID) {
 		return getSprint(sprintID).getWorkDates();
-	}
+	}*/
 
 	public List<WorkDate> createWorkDates(Sprint sprint) {
 		List<LocalDate> dates = getDates(
@@ -111,5 +113,16 @@ public class SprintService {
 
 		return workingDates;
 
+	}
+	
+	public Sprint getSprint(String id){
+		if(!StringUtils.isBlank(id)){
+			return SprintIvyRepoService.getSprint(id);
+		}	
+		return new Sprint();
+	}
+	
+	public List<Sprint> loadSprints(){
+		return SprintIvyRepoService.loadSprints();
 	}
 }

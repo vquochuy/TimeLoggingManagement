@@ -7,7 +7,7 @@ package time.logging.management;
 public class Story extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -892942031347597972L;
+  private static final long serialVersionUID = 1345098970569031020L;
 
   private java.lang.String title;
 
@@ -69,13 +69,13 @@ public class Story extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     point = _point;
   }
 
-  private time.logging.management.Epic epic;
+  private java.lang.String epic;
 
   /**
    * Gets the field epic.
    * @return the value of the field epic; may be null.
    */
-  public time.logging.management.Epic getEpic()
+  public java.lang.String getEpic()
   {
     return epic;
   }
@@ -84,7 +84,7 @@ public class Story extends ch.ivyteam.ivy.scripting.objects.CompositeObject
    * Sets the field epic.
    * @param _epic the new value of the field epic.
    */
-  public void setEpic(time.logging.management.Epic _epic)
+  public void setEpic(java.lang.String _epic)
   {
     epic = _epic;
   }

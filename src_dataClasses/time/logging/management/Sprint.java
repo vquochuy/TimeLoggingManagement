@@ -7,7 +7,7 @@ package time.logging.management;
 public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -714239304129207942L;
+  private static final long serialVersionUID = -3127181355945057352L;
 
   private java.lang.String name;
 
@@ -69,46 +69,6 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     endDate = _endDate;
   }
 
-  private time.logging.management.Epic epic;
-
-  /**
-   * Gets the field epic.
-   * @return the value of the field epic; may be null.
-   */
-  public time.logging.management.Epic getEpic()
-  {
-    return epic;
-  }
-
-  /**
-   * Sets the field epic.
-   * @param _epic the new value of the field epic.
-   */
-  public void setEpic(time.logging.management.Epic _epic)
-  {
-    epic = _epic;
-  }
-
-  private java.lang.Integer id;
-
-  /**
-   * Gets the field id.
-   * @return the value of the field id; may be null.
-   */
-  public java.lang.Integer getId()
-  {
-    return id;
-  }
-
-  /**
-   * Sets the field id.
-   * @param _id the new value of the field id.
-   */
-  public void setId(java.lang.Integer _id)
-  {
-    id = _id;
-  }
-
   private java.util.List<time.logging.management.WorkDate> workDates;
 
   /**
@@ -127,6 +87,46 @@ public class Sprint extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setWorkDates(java.util.List<time.logging.management.WorkDate> _workDates)
   {
     workDates = _workDates;
+  }
+
+  private java.util.List<time.logging.management.Sprint> stories;
+
+  /**
+   * Gets the field stories.
+   * @return the value of the field stories; may be null.
+   */
+  public java.util.List<time.logging.management.Sprint> getStories()
+  {
+    return stories;
+  }
+
+  /**
+   * Sets the field stories.
+   * @param _stories the new value of the field stories.
+   */
+  public void setStories(java.util.List<time.logging.management.Sprint> _stories)
+  {
+    stories = _stories;
+  }
+
+  private java.lang.String id;
+
+  /**
+   * Gets the field id.
+   * @return the value of the field id; may be null.
+   */
+  public java.lang.String getId()
+  {
+    return id;
+  }
+
+  /**
+   * Sets the field id.
+   * @param _id the new value of the field id.
+   */
+  public void setId(java.lang.String _id)
+  {
+    id = _id;
   }
 
 }

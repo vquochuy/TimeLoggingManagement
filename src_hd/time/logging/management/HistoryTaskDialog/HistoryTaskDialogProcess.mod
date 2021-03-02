@@ -42,6 +42,9 @@ Hs0 @RichDialogProcessEnd f25 '' #zField
 Hs0 @RestClientCall f26 '' #zField
 Hs0 @PushWFArc f27 '' #zField
 Hs0 @PushWFArc f23 '' #zField
+Hs0 @RichDialogEnd f30 '' #zField
+Hs0 @RichDialogProcessStart f28 '' #zField
+Hs0 @PushWFArc f29 '' #zField
 >Proto Hs0 Hs0 HistoryTaskDialogProcess #zField
 Hs0 f0 guid 177DDA4E151E53F9 #txt
 Hs0 f0 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
@@ -112,12 +115,14 @@ Hs0 f9 actionTable 'out=in;
 Hs0 f9 actionCode 'import services.SprintService;
 
 SprintService service = new services.SprintService();
-in.sprints = service.getSprints();' #txt
+in.sprints = service.loadSprints();' #txt
 Hs0 f9 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 Hs0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
     <language>
         <name>read data from jira</name>
+        <nameStyle>19,5,7
+</nameStyle>
     </language>
 </elementInfo>
 ' #txt
@@ -133,7 +138,8 @@ Hs0 f11 actionTable 'out=in;
 ' #txt
 Hs0 f11 actionCode 'import services.SprintService;
 SprintService sprintService = new services.SprintService();
-in.sprints = sprintService.getSprints();
+in.sprints = sprintService.loadSprints();
+
 ' #txt
 Hs0 f11 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 Hs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -280,6 +286,29 @@ Hs0 f26 @|RestClientCallIcon #fIcon
 Hs0 f27 expr out #txt
 Hs0 f27 93 664 192 664 #arcP
 Hs0 f23 304 664 435 664 #arcP
+Hs0 f30 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f30 guid 177DD60B94BCE8B3 #txt
+Hs0 f30 563 779 26 26 0 12 #rect
+Hs0 f30 @|RichDialogEndIcon #fIcon
+Hs0 f28 guid 177F09B33EFC2E60 #txt
+Hs0 f28 type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
+Hs0 f28 actionDecl 'time.logging.management.HistoryTaskDialog.HistoryTaskDialogData out;
+' #txt
+Hs0 f28 actionTable 'out=in;
+' #txt
+Hs0 f28 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>requestVerification</name>
+        <nameStyle>19,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Hs0 f28 67 779 26 26 -51 15 #rect
+Hs0 f28 @|RichDialogProcessStartIcon #fIcon
+Hs0 f29 expr out #txt
+Hs0 f29 93 792 563 792 #arcP
 >Proto Hs0 .type time.logging.management.HistoryTaskDialog.HistoryTaskDialogData #txt
 >Proto Hs0 .processKind HTML_DIALOG #txt
 >Proto Hs0 -8 -8 16 16 16 26 #rect
@@ -306,3 +335,5 @@ Hs0 f24 mainOut f27 tail #connect
 Hs0 f27 head f26 mainIn #connect
 Hs0 f26 mainOut f23 tail #connect
 Hs0 f23 head f25 mainIn #connect
+Hs0 f28 mainOut f29 tail #connect
+Hs0 f29 head f30 mainIn #connect

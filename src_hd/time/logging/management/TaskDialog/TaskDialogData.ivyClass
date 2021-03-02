@@ -1,0 +1,10 @@
+TaskDialogData #class
+time.logging.management.TaskDialog #namespace
+task time.logging.management.Task #field
+task PERSISTENT #fieldModifier
+currentView String #field
+currentView PERSISTENT #fieldModifier
+nextView String #field
+nextView PERSISTENT #fieldModifier
+sprint String #field
+sprint PERSISTENT #fieldModifier

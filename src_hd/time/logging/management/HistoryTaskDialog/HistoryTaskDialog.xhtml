@@ -21,15 +21,15 @@
 						<f:selectItem itemLabel="Select One" itemValue="" />
 						<f:selectItems value="#{data.sprints}" var="sprint"
 							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
-						<p:ajax event="valueChange" update="dlgTask myForm workDates" />
+						<p:ajax event="valueChange" update="dlgTask myForm" />
 					</p:selectOneMenu>
 				</div>
 
-			<!-- 	<p:commandButton value="Add" icon="pi pi-external-link"
-					actionListener="#{logic.callJiraApi}"
-					onclick="PF('dlgWorkDate').show()" /> -->
+				<p:commandButton value="Create Task" icon="pi pi-external-link"
+					type="button" actionListener="#{logic.callJiraApi}"
+					onclick="PF('dlgTask').show()" />
 
-				<p:dataTable id="workDates" widgetVar="workDates" var="workDate"
+				<!-- 	<p:dataTable id="workDates" widgetVar="workDates" var="workDate"
 					value="#{sprintBean.selectedSprint.workDates}"
 					rowKey="#{workDate.date}" paginator="true" rows="10"
 					rowSelectMode="add" paginatorPosition="bottom">
@@ -39,22 +39,16 @@
 					<p:column exportable="false">
 						<p:commandButton value="Create Task" icon="pi pi-plus"
 							actionListener="#{logic.callJiraApi}"
-							onclick="PF('dlgWorkDate').show()" update="dlgTask"/>
+							onclick="PF('dlgTask').show()" update="dlgTask"/>
 					</p:column>
 
 
-				</p:dataTable>
+				</p:dataTable> -->
 
 				<p:repeat value="#{sprintBean.selectedSprint.workDates}"
 					var="workDate">
 					<div>
 						<div>#{workDate.name}</div>
-						<p:commandButton value="Create Task" icon="pi pi-plus"
-							actionListener="#{logic.callJiraApi}"
-							onclick="PF('dlgWorkDate').show()" />
-
-						<!-- <f:setPropertyActionListener value="#{workDate}" target="#{taskBean.selectedDate}" /> -->
-						<!-- </p:commandButton> -->
 						<p:repeat value="#{workDate.tasks}" var="task">
 							<div>#{task.summary}</div>
 						</p:repeat>
@@ -67,26 +61,29 @@
 			</h:form>
 
 
-			<p:dialog header="Create Task" widgetVar="dlgTask" minHeight="40"
-				width="350" showEffect="fade" id="dlgTask">
-				<div class="card">
-					<p:panelGrid columns="2" layout="grid"
-						styleClass="showcase-text-align-center" id="tasks">
-						<h:outputLabel value="Story"></h:outputLabel>
-						<h:outputText value="#{taskBean.selectedTask.workDate.name}" />
-						<h:outputLabel value="Sprint"></h:outputLabel>
-						<h:outputText value="#{taskBean.selectedTask.summary}" />
-						<h:outputText value="Content" />
-						<h:outputText value="Content" />
-						<h:outputText value="Content" />
-					</p:panelGrid>
-				</div>
+			<p:dialog header="Create Task" widgetVar="dlgTask" minHeight="100"
+				width="850" showEffect="fade" id="dlgTask">
+				
+					<div class="card">
+						<p:panelGrid columns="2" layout="grid"
+							styleClass="showcase-text-align-center" id="tasks">
+							<h:outputLabel value="Summary"></h:outputLabel>
+							<h:inputText value="#{data.task.summary}" />
+							<h:outputLabel value="Time Spent"></h:outputLabel>
+							<h:inputText value="#{data.task.timeSpent}" />
+							<h:outputText value="Content" />
+							<h:outputText value="Content" />
+							<h:outputText value="Content" />
+						</p:panelGrid>
+					</div>
 
-				<f:facet name="footer">
-					<p:commandButton type="button" value="No"
-						styleClass="ui-button-flat p-mr-2" style="width: 12rem" />
-					<p:commandButton type="button" value="Yes" style="width: 12rem" />
-				</f:facet>
+					<f:facet name="footer">
+						<p:commandButton type="button" value="No"
+							styleClass="ui-button-flat p-mr-2" style="width: 12rem" />
+						<p:commandButton value="Created" actionListener="#{logic.requestVerification}" onclick="PF('dlgTask').hide()" id="requestVerification"  update="myForm"  style="width: 12rem" />
+					</f:facet>
+		
+
 			</p:dialog>
 
 		</ui:define>
