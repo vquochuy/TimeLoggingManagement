@@ -16,24 +16,26 @@
 					<p:messages id="msgs"></p:messages>
 
 					<div>
-						<p:outputPanel id="manage-task-content">
-							<p:outputLabel value="Name" for="SprintName"></p:outputLabel>
-							<p:inputText value="#{data.sprint.name}" required="true"
-								id="SprintName"></p:inputText>
-							<p:outputLabel value="Start Date" for="StartDate"></p:outputLabel>
-							<p:inputText value="#{data.sprint.startDate}" required="true"
-								id="StartDate">
-								<f:converter converterId="dateConverter"></f:converter>
-							</p:inputText>
+						<p:outputPanel rendered="#{logic.checkPermission()}">
+							<p:outputPanel id="manage-task-content">
+								<p:outputLabel value="Name" for="SprintName"></p:outputLabel>
+								<p:inputText value="#{data.sprint.name}" required="true"
+									id="SprintName"></p:inputText>
+								<p:outputLabel value="Start Date" for="StartDate"></p:outputLabel>
+								<p:inputText value="#{data.sprint.startDate}" required="true"
+									id="StartDate">
+									<f:converter converterId="dateConverter"></f:converter>
+								</p:inputText>
+							</p:outputPanel>
+							<p:commandButton actionListener="#{logic.save}" update="form"
+								value="Save" icon="pi pi-check" />
 						</p:outputPanel>
-						<p:commandButton actionListener="#{logic.save}" update="@this" value="Save" icon="pi pi-check" />
-						<p:commandButton actionListener="#{logic.close}" value="close" />
 
 					</div>
 
 					<div class="card">
-						<p:dataTable var="sprint" value="#{data.sprints}"
-							rowKey="#{sprint.name}">
+						<p:dataTable id="dt-sprints" var="sprint" value="#{data.sprints}"
+							rowKey="#{sprint.name}" sortBy="#{sprint.name}">
 							<p:column headerText="Name">
 								<h:outputText value="#{sprint.name}" />
 							</p:column>

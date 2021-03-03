@@ -13,6 +13,7 @@ import time.logging.management.Sprint;
 import time.logging.management.Task;
 import time.logging.management.WorkDate;
 import ch.ivyteam.ivy.environment.Ivy;
+import ch.ivyteam.ivy.security.IRole;
 import ch.ivyteam.ivy.security.IUser;
 
 public class SprintService {
@@ -83,7 +84,7 @@ public class SprintService {
 	}*/
 
 	public List<WorkDate> createWorkDates(Sprint sprint) {
-		List<LocalDate> dates = getDates(
+		List<LocalDate> dates = getWorkingDates(
 				sprint.getStartDate(), sprint.getEndDate());
 		List<WorkDate> workDates = new ArrayList<>();
 		dates.forEach(date -> {
@@ -94,7 +95,7 @@ public class SprintService {
 		return workDates;
 	}
 
-	public List<LocalDate> getDates(LocalDate startDate, LocalDate endDate) {
+	public List<LocalDate> getWorkingDates(LocalDate startDate, LocalDate endDate) {
 		EnumSet<DayOfWeek> weekend = EnumSet.of(DayOfWeek.SATURDAY,
 				DayOfWeek.SUNDAY);
 		List<LocalDate> dates = new ArrayList<>();
@@ -124,5 +125,24 @@ public class SprintService {
 	
 	public List<Sprint> loadSprints(){
 		return SprintIvyRepoService.loadSprints();
+	}
+	
+	public void save(Sprint sprint){
+		if(sprint.getStartDate()!= null){
+			sprint.setEndDate(sprint.getStartDate().plusWeeks(2));
+		}
+		sprint.setWorkDates(createWorkDates(sprint));
+		sprint.setId(String.valueOf(Math.random()));
+		SprintIvyRepoService.save(sprint);
+		
+	}
+	
+	public static Boolean isValid(){
+		String sm = "ScrumMaster";
+		return Ivy.session().getSessionUser().getAllRoles()
+        .stream()
+        .map(IRole::getName)
+        .anyMatch(sm::equals);
+	
 	}
 }

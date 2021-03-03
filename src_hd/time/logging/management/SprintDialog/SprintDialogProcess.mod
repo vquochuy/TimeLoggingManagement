@@ -27,6 +27,9 @@ Ss0 @PushWFArc f8 '' #zField
 Ss0 @PushWFArc f2 '' #zField
 Ss0 @PushWFArc f12 '' #zField
 Ss0 @GridStep f11 '' #zField
+Ss0 @RichDialogMethodStart f13 '' #zField
+Ss0 @RichDialogProcessEnd f14 '' #zField
+Ss0 @PushWFArc f15 '' #zField
 >Proto Ss0 Ss0 SprintDialogProcess #zField
 Ss0 f0 guid 177F18D4B9590A4B #txt
 Ss0 f0 type time.logging.management.SprintDialog.SprintDialogData #txt
@@ -94,10 +97,16 @@ Ss0 f9 actionDecl 'time.logging.management.SprintDialog.SprintDialogData out;
 ' #txt
 Ss0 f9 actionTable 'out=in;
 ' #txt
-Ss0 f9 actionCode 'import services.SprintIvyRepoService;
-ivy.log.info(in.sprint);
-SprintIvyRepoService.save(in.sprint);
-in.sprints = SprintIvyRepoService.loadSprints();' #txt
+Ss0 f9 actionCode 'import time.logging.management.Sprint;
+import services.SprintIvyRepoService;
+import services.SprintService;
+SprintService sprintService = new SprintService();
+Sprint newSprint = new Sprint();
+newSprint.setName(in.sprint.name);
+newSprint.setStartDate(in.sprint.startDate);
+sprintService.save(newSprint);
+Thread.sleep(1000);
+in.sprints = sprintService.loadSprints();' #txt
 Ss0 f9 type time.logging.management.SprintDialog.SprintDialogData #txt
 Ss0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -138,6 +147,33 @@ Ss0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 ' #txt
 Ss0 f11 168 42 112 44 -39 -8 #rect
 Ss0 f11 @|StepIcon #fIcon
+Ss0 f13 guid 177F5CB62D394BCD #txt
+Ss0 f13 type time.logging.management.SprintDialog.SprintDialogData #txt
+Ss0 f13 method checkPermission() #txt
+Ss0 f13 disableUIEvents false #txt
+Ss0 f13 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<> param = methodEvent.getInputArguments();
+' #txt
+Ss0 f13 outParameterDecl '<java.lang.Boolean isChecked> result;
+' #txt
+Ss0 f13 outParameterMapAction 'result.isChecked=services.SprintService.isValid();
+' #txt
+Ss0 f13 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>checkPermission()</name>
+        <nameStyle>17,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Ss0 f13 83 403 26 26 -52 15 #rect
+Ss0 f13 @|RichDialogMethodStartIcon #fIcon
+Ss0 f14 type time.logging.management.SprintDialog.SprintDialogData #txt
+Ss0 f14 355 403 26 26 0 12 #rect
+Ss0 f14 @|RichDialogProcessEndIcon #fIcon
+Ss0 f15 expr out #txt
+Ss0 f15 109 416 355 416 #arcP
 >Proto Ss0 .type time.logging.management.SprintDialog.SprintDialogData #txt
 >Proto Ss0 .processKind HTML_DIALOG #txt
 >Proto Ss0 -8 -8 16 16 16 26 #rect
@@ -152,3 +188,5 @@ Ss0 f0 mainOut f12 tail #connect
 Ss0 f12 head f11 mainIn #connect
 Ss0 f11 mainOut f2 tail #connect
 Ss0 f2 head f1 mainIn #connect
+Ss0 f13 mainOut f15 tail #connect
+Ss0 f15 head f14 mainIn #connect

@@ -26,8 +26,8 @@ Tt0 @TkArc f11 '' #zField
 Tt0 @StartRequest f5 '' #zField
 Tt0 @EndTask f6 '' #zField
 Tt0 @RichDialog f8 '' #zField
-Tt0 @PushWFArc f9 '' #zField
 Tt0 @PushWFArc f7 '' #zField
+Tt0 @PushWFArc f9 '' #zField
 >Proto Tt0 Tt0 TimeLoggingManagement #zField
 Tt0 f0 outLink start.ivp #txt
 Tt0 f0 type time.logging.management.TimeLoggingManagementData #txt
@@ -199,7 +199,7 @@ Tt0 f5 @C|.responsibility Everybody #txt
 Tt0 f5 113 497 30 30 -52 17 #rect
 Tt0 f5 @|StartRequestIcon #fIcon
 Tt0 f6 type time.logging.management.TimeLoggingManagementData #txt
-Tt0 f6 625 497 30 30 0 15 #rect
+Tt0 f6 753 497 30 30 0 15 #rect
 Tt0 f6 @|EndIcon #fIcon
 Tt0 f8 targetWindow NEW #txt
 Tt0 f8 targetDisplay TOP #txt
@@ -223,12 +223,12 @@ Tt0 f8 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Tt0 f8 232 490 112 44 -36 -8 #rect
+Tt0 f8 360 490 112 44 -36 -8 #rect
 Tt0 f8 @|RichDialogIcon #fIcon
-Tt0 f9 expr out #txt
-Tt0 f9 143 512 232 512 #arcP
 Tt0 f7 expr out #txt
-Tt0 f7 344 512 625 512 #arcP
+Tt0 f7 472 512 753 512 #arcP
+Tt0 f9 expr out #txt
+Tt0 f9 143 512 360 512 #arcP
 >Proto Tt0 .type time.logging.management.TimeLoggingManagementData #txt
 >Proto Tt0 .processKind NORMAL #txt
 >Proto Tt0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -271,7 +271,7 @@ Tt0 f2 out f13 tail #connect
 Tt0 f13 head f1 mainIn #connect
 Tt0 f3 mainOut f11 tail #connect
 Tt0 f11 head f10 in #connect
-Tt0 f5 mainOut f9 tail #connect
-Tt0 f9 head f8 mainIn #connect
 Tt0 f8 mainOut f7 tail #connect
 Tt0 f7 head f6 mainIn #connect
+Tt0 f5 mainOut f9 tail #connect
+Tt0 f9 head f8 mainIn #connect
