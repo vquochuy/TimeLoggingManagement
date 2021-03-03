@@ -8,11 +8,13 @@ timeSpent Integer #field
 timeSpent PERSISTENT #fieldModifier
 story time.logging.management.Story #field
 story PERSISTENT #fieldModifier
-user ch.ivyteam.ivy.security.IUser #field
-user PERSISTENT #fieldModifier
+userName String #field
+userName PERSISTENT #fieldModifier
 isVerified Boolean #field
 isVerified PERSISTENT #fieldModifier
 rejectedReason String #field
 rejectedReason PERSISTENT #fieldModifier
 paymentKind String #field
 paymentKind PERSISTENT #fieldModifier
+sprint String #field
+sprint PERSISTENT #fieldModifier

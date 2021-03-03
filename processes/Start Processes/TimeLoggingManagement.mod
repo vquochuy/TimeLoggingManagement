@@ -27,6 +27,8 @@ Tt0 @StartRequest f5 '' #zField
 Tt0 @EndTask f6 '' #zField
 Tt0 @RichDialog f8 '' #zField
 Tt0 @PushWFArc f7 '' #zField
+Tt0 @Alternative f16 '' #zField
+Tt0 @PushWFArc f17 '' #zField
 Tt0 @PushWFArc f9 '' #zField
 >Proto Tt0 Tt0 TimeLoggingManagement #zField
 Tt0 f0 outLink start.ivp #txt
@@ -71,6 +73,8 @@ Tt0 f3 requestActionDecl '<> param;' #txt
 Tt0 f3 responseActionDecl 'time.logging.management.TimeLoggingManagementData out;
 ' #txt
 Tt0 f3 responseMappingAction 'out=in;
+out.task=result.Task;
+out.task.summary=in.task.summary;
 ' #txt
 Tt0 f3 isAsynch false #txt
 Tt0 f3 isInnerRd false #txt
@@ -122,6 +126,7 @@ Tt0 f14 startMethod start(time.logging.management.Task) #txt
 Tt0 f14 type time.logging.management.TimeLoggingManagementData #txt
 Tt0 f14 requestActionDecl '<time.logging.management.Task task> param;' #txt
 Tt0 f14 requestMappingAction 'param.task=in.task;
+param.task.workDate=in.task.workDate;
 ' #txt
 Tt0 f14 responseActionDecl 'time.logging.management.TimeLoggingManagementData out;
 ' #txt
@@ -227,8 +232,13 @@ Tt0 f8 360 490 112 44 -36 -8 #rect
 Tt0 f8 @|RichDialogIcon #fIcon
 Tt0 f7 expr out #txt
 Tt0 f7 472 512 753 512 #arcP
-Tt0 f9 expr out #txt
-Tt0 f9 143 512 360 512 #arcP
+Tt0 f16 type time.logging.management.TimeLoggingManagementData #txt
+Tt0 f16 208 496 32 32 0 16 #rect
+Tt0 f16 @|AlternativeIcon #fIcon
+Tt0 f17 expr out #txt
+Tt0 f17 143 512 208 512 #arcP
+Tt0 f9 expr in #txt
+Tt0 f9 240 512 360 512 #arcP
 >Proto Tt0 .type time.logging.management.TimeLoggingManagementData #txt
 >Proto Tt0 .processKind NORMAL #txt
 >Proto Tt0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -273,5 +283,7 @@ Tt0 f3 mainOut f11 tail #connect
 Tt0 f11 head f10 in #connect
 Tt0 f8 mainOut f7 tail #connect
 Tt0 f7 head f6 mainIn #connect
-Tt0 f5 mainOut f9 tail #connect
+Tt0 f5 mainOut f17 tail #connect
+Tt0 f17 head f16 in #connect
+Tt0 f16 out f9 tail #connect
 Tt0 f9 head f8 mainIn #connect

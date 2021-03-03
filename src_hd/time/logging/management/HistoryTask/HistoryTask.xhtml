@@ -24,16 +24,28 @@
 				<p:commandButton value="Create Task" update="myForm"
 					action="#{logic.nextView('CreateTask')}" id="nextButton" />
 
-				<p:repeat value="#{data.selectedSprint.workDates}" var="workDate">
+			<!-- 	<p:repeat value="#{data.selectedSprint.workDates}" var="workDate">
 					<div>
 						<div>#{workDate.name}</div>
 						<p:repeat value="#{workDate.tasks}" var="task">
-							<div>#{task.summary}</div>
-						</p:repeat>
-						<div>#{workDate.sprint.name}</div>
+							<p:outputLabel value="#{task.summary}"></p:outputLabel>
+							<p:outputLabel value="#{task.user}"></p:outputLabel>
+						</p:repeat>						
 					</div>
 				</p:repeat>
-
+				 -->
+				
+				<p:repeat value="#{data.workDates}" var="workDate">
+					<div>
+						<div>#{workDate.name}</div>
+						<p:repeat value="#{workDate.tasks}" var="task">
+							<p:outputLabel value="#{task.summary}"></p:outputLabel>
+							<p:outputLabel value="#{task.userName}"></p:outputLabel>
+						</p:repeat>						
+					</div>
+				</p:repeat>
+				
+				
 			</h:form>
 		</ui:define>
 	</ui:composition>

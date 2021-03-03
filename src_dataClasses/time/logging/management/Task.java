@@ -7,7 +7,7 @@ package time.logging.management;
 public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 8274180092290234306L;
+  private static final long serialVersionUID = 8950915733905275645L;
 
   private time.logging.management.WorkDate workDate;
 
@@ -89,24 +89,24 @@ public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     story = _story;
   }
 
-  private ch.ivyteam.ivy.security.IUser user;
+  private java.lang.String userName;
 
   /**
-   * Gets the field user.
-   * @return the value of the field user; may be null.
+   * Gets the field userName.
+   * @return the value of the field userName; may be null.
    */
-  public ch.ivyteam.ivy.security.IUser getUser()
+  public java.lang.String getUserName()
   {
-    return user;
+    return userName;
   }
 
   /**
-   * Sets the field user.
-   * @param _user the new value of the field user.
+   * Sets the field userName.
+   * @param _userName the new value of the field userName.
    */
-  public void setUser(ch.ivyteam.ivy.security.IUser _user)
+  public void setUserName(java.lang.String _userName)
   {
-    user = _user;
+    userName = _userName;
   }
 
   private java.lang.Boolean isVerified;
@@ -167,6 +167,26 @@ public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setPaymentKind(java.lang.String _paymentKind)
   {
     paymentKind = _paymentKind;
+  }
+
+  private java.lang.String sprint;
+
+  /**
+   * Gets the field sprint.
+   * @return the value of the field sprint; may be null.
+   */
+  public java.lang.String getSprint()
+  {
+    return sprint;
+  }
+
+  /**
+   * Sets the field sprint.
+   * @param _sprint the new value of the field sprint.
+   */
+  public void setSprint(java.lang.String _sprint)
+  {
+    sprint = _sprint;
   }
 
 }

@@ -12,3 +12,9 @@ selectedSprint time.logging.management.Sprint #field
 selectedSprint PERSISTENT #fieldModifier
 selectedSprintID String #field
 selectedSprintID PERSISTENT #fieldModifier
+selectedWorkDateID String #field
+selectedWorkDateID PERSISTENT #fieldModifier
+selectedWorkDate time.logging.management.WorkDate #field
+selectedWorkDate PERSISTENT #fieldModifier
+workDates java.util.List<time.logging.management.WorkDate> #field
+workDates PERSISTENT #fieldModifier

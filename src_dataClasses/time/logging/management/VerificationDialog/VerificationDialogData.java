@@ -7,7 +7,7 @@ package time.logging.management.VerificationDialog;
 public class VerificationDialogData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -5467704474036980347L;
+  private static final long serialVersionUID = 4591099314073318347L;
 
   private time.logging.management.Task task;
 
@@ -27,6 +27,26 @@ public class VerificationDialogData extends ch.ivyteam.ivy.scripting.objects.Com
   public void setTask(time.logging.management.Task _task)
   {
     task = _task;
+  }
+
+  private time.logging.management.Sprint sprint;
+
+  /**
+   * Gets the field sprint.
+   * @return the value of the field sprint; may be null.
+   */
+  public time.logging.management.Sprint getSprint()
+  {
+    return sprint;
+  }
+
+  /**
+   * Sets the field sprint.
+   * @param _sprint the new value of the field sprint.
+   */
+  public void setSprint(time.logging.management.Sprint _sprint)
+  {
+    sprint = _sprint;
   }
 
 }

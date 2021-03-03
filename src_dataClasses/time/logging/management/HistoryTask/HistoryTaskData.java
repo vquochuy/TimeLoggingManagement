@@ -7,7 +7,7 @@ package time.logging.management.HistoryTask;
 public class HistoryTaskData extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = -6672190813871470691L;
+  private static final long serialVersionUID = -120973627815930850L;
 
   private time.logging.management.Task task;
 
@@ -127,6 +127,66 @@ public class HistoryTaskData extends ch.ivyteam.ivy.scripting.objects.CompositeO
   public void setSelectedSprintID(java.lang.String _selectedSprintID)
   {
     selectedSprintID = _selectedSprintID;
+  }
+
+  private java.lang.String selectedWorkDateID;
+
+  /**
+   * Gets the field selectedWorkDateID.
+   * @return the value of the field selectedWorkDateID; may be null.
+   */
+  public java.lang.String getSelectedWorkDateID()
+  {
+    return selectedWorkDateID;
+  }
+
+  /**
+   * Sets the field selectedWorkDateID.
+   * @param _selectedWorkDateID the new value of the field selectedWorkDateID.
+   */
+  public void setSelectedWorkDateID(java.lang.String _selectedWorkDateID)
+  {
+    selectedWorkDateID = _selectedWorkDateID;
+  }
+
+  private time.logging.management.WorkDate selectedWorkDate;
+
+  /**
+   * Gets the field selectedWorkDate.
+   * @return the value of the field selectedWorkDate; may be null.
+   */
+  public time.logging.management.WorkDate getSelectedWorkDate()
+  {
+    return selectedWorkDate;
+  }
+
+  /**
+   * Sets the field selectedWorkDate.
+   * @param _selectedWorkDate the new value of the field selectedWorkDate.
+   */
+  public void setSelectedWorkDate(time.logging.management.WorkDate _selectedWorkDate)
+  {
+    selectedWorkDate = _selectedWorkDate;
+  }
+
+  private java.util.List<time.logging.management.WorkDate> workDates;
+
+  /**
+   * Gets the field workDates.
+   * @return the value of the field workDates; may be null.
+   */
+  public java.util.List<time.logging.management.WorkDate> getWorkDates()
+  {
+    return workDates;
+  }
+
+  /**
+   * Sets the field workDates.
+   * @param _workDates the new value of the field workDates.
+   */
+  public void setWorkDates(java.util.List<time.logging.management.WorkDate> _workDates)
+  {
+    workDates = _workDates;
   }
 
 }

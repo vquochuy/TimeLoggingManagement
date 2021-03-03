@@ -20,6 +20,12 @@
 						<p:outputLabel value="Sprint " for="Sprint"></p:outputLabel>
 						<p:inputText value="#{data.selectedSprint.name}" id="Sprint"></p:inputText>
 					</h:panelGrid>
+						<p:selectOneMenu id="selectMenu" value="#{data.selectedWorkDateID}">
+						<f:selectItem itemLabel="Select One" itemValue="" />
+						<f:selectItems value="#{data.selectedSprint.workDates}" var="workDate"
+							itemLabel="#{workDate.name}" itemValue="#{workDate.name}" />
+						<p:ajax event="valueChange" listener="#{logic.updateWorkDate}" update="myForm"/>
+					</p:selectOneMenu>
 					<p:commandButton value="Submit" update="myForm" action="#{logic.nextView('HistoryTask')}" actionListener="#{logic.requestVerification}" id="finishButton"></p:commandButton>
 					<p:commandButton value="Cancel" update="myForm" action="#{logic.nextView('HistoryTaskDialog')}" id="cancelButton"></p:commandButton>
 				</h:panelGroup>

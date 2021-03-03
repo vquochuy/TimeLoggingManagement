@@ -32,7 +32,7 @@ public class SprintIvyRepoService {
 				sprint.getStartDate(), sprint.getEndDate());
 		List<WorkDate> workDates = new ArrayList<>();
 		dates.forEach(date -> {
-			WorkDate workDate = new WorkDate();
+			WorkDate workDate = new WorkDate();			
 			workDate.setName(date.toString());
 			workDates.add(workDate);
 		});
@@ -57,6 +57,5 @@ public class SprintIvyRepoService {
 		});
 
 		return workingDates;
-
 	}
 }

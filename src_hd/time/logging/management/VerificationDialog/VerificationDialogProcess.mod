@@ -22,7 +22,6 @@ Vs0 @RichDialogEnd f4 '' #zField
 Vs0 @PushWFArc f5 '' #zField
 Vs0 @RichDialogInitStart f6 '' #zField
 Vs0 @RichDialogProcessEnd f7 '' #zField
-Vs0 @PushWFArc f8 '' #zField
 Vs0 @GridStep f17 '' #zField
 Vs0 @RichDialogEnd f12 '' #zField
 Vs0 @RichDialogProcessStart f11 '' #zField
@@ -33,6 +32,12 @@ Vs0 @PushWFArc f14 '' #zField
 Vs0 @GridStep f15 '' #zField
 Vs0 @PushWFArc f16 '' #zField
 Vs0 @PushWFArc f13 '' #zField
+Vs0 @RichDialogInitStart f19 '' #zField
+Vs0 @RichDialogProcessEnd f20 '' #zField
+Vs0 @PushWFArc f21 '' #zField
+Vs0 @GridStep f22 '' #zField
+Vs0 @PushWFArc f23 '' #zField
+Vs0 @PushWFArc f8 '' #zField
 >Proto Vs0 Vs0 VerificationDialogProcess #zField
 Vs0 f0 guid 177F084C32EA446B #txt
 Vs0 f0 type time.logging.management.VerificationDialog.VerificationDialogData #txt
@@ -50,13 +55,13 @@ Vs0 f0 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f0 59 51 26 26 -16 15 #rect
+Vs0 f0 51 51 26 26 -16 15 #rect
 Vs0 f0 @|RichDialogInitStartIcon #fIcon
 Vs0 f1 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f1 315 51 26 26 0 12 #rect
 Vs0 f1 @|RichDialogProcessEndIcon #fIcon
 Vs0 f2 expr out #txt
-Vs0 f2 85 64 315 64 #arcP
+Vs0 f2 77 64 315 64 #arcP
 Vs0 f3 guid 177F084C33CD0020 #txt
 Vs0 f3 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f3 actionDecl 'time.logging.management.VerificationDialog.VerificationDialogData out;
@@ -70,14 +75,14 @@ Vs0 f3 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f3 59 267 26 26 -15 12 #rect
+Vs0 f3 51 267 26 26 -15 12 #rect
 Vs0 f3 @|RichDialogProcessStartIcon #fIcon
 Vs0 f4 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f4 guid 177F084C33DCD3C0 #txt
 Vs0 f4 315 267 26 26 0 12 #rect
 Vs0 f4 @|RichDialogEndIcon #fIcon
 Vs0 f5 expr out #txt
-Vs0 f5 85 280 315 280 #arcP
+Vs0 f5 77 280 315 280 #arcP
 Vs0 f6 guid 177F08B6FDA33EAE #txt
 Vs0 f6 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f6 method start(time.logging.management.Task) #txt
@@ -100,13 +105,11 @@ Vs0 f6 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f6 59 115 26 26 -29 15 #rect
+Vs0 f6 51 115 26 26 -29 15 #rect
 Vs0 f6 @|RichDialogInitStartIcon #fIcon
 Vs0 f7 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f7 315 115 26 26 0 12 #rect
 Vs0 f7 @|RichDialogProcessEndIcon #fIcon
-Vs0 f8 expr out #txt
-Vs0 f8 85 128 315 128 #arcP
 Vs0 f17 actionDecl 'time.logging.management.VerificationDialog.VerificationDialogData out;
 ' #txt
 Vs0 f17 actionTable 'out=in;
@@ -143,7 +146,7 @@ Vs0 f11 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f11 59 491 26 26 -19 15 #rect
+Vs0 f11 51 491 26 26 -19 15 #rect
 Vs0 f11 @|RichDialogProcessStartIcon #fIcon
 Vs0 f10 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f10 guid 177DD77106B1665B #txt
@@ -164,17 +167,22 @@ Vs0 f9 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     </language>
 </elementInfo>
 ' #txt
-Vs0 f9 59 379 26 26 -13 15 #rect
+Vs0 f9 51 379 26 26 -13 15 #rect
 Vs0 f9 @|RichDialogProcessStartIcon #fIcon
 Vs0 f18 expr out #txt
-Vs0 f18 85 504 144 504 #arcP
+Vs0 f18 77 504 144 504 #arcP
 Vs0 f14 expr out #txt
 Vs0 f14 256 504 315 504 #arcP
 Vs0 f15 actionDecl 'time.logging.management.VerificationDialog.VerificationDialogData out;
 ' #txt
 Vs0 f15 actionTable 'out=in;
 ' #txt
-Vs0 f15 actionCode 'in.task.isVerified = true;' #txt
+Vs0 f15 actionCode 'import services.TaskService;
+in.task.isVerified = true;
+ivy.log.info("Task info : "+in.task);
+ivy.log.info("Verify - Sprint id "+ in.task.workDate.sprint.id);
+TaskService taskService = new TaskService();
+taskService.save(in.task);' #txt
 Vs0 f15 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>
@@ -188,9 +196,60 @@ Vs0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 Vs0 f15 144 370 112 44 -14 -8 #rect
 Vs0 f15 @|StepIcon #fIcon
 Vs0 f16 expr out #txt
-Vs0 f16 85 392 144 392 #arcP
+Vs0 f16 77 392 144 392 #arcP
 Vs0 f13 expr out #txt
 Vs0 f13 256 392 315 392 #arcP
+Vs0 f19 guid 177F5EDB1CA5257C #txt
+Vs0 f19 type time.logging.management.VerificationDialog.VerificationDialogData #txt
+Vs0 f19 method start(time.logging.management.Task,time.logging.management.Sprint) #txt
+Vs0 f19 disableUIEvents true #txt
+Vs0 f19 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<time.logging.management.Task task,time.logging.management.Sprint sprint> param = methodEvent.getInputArguments();
+' #txt
+Vs0 f19 inParameterMapAction 'out.sprint=param.sprint;
+out.task=param.task;
+' #txt
+Vs0 f19 outParameterDecl '<time.logging.management.Task task> result;
+' #txt
+Vs0 f19 outParameterMapAction 'result.task=in.task;
+' #txt
+Vs0 f19 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>start(Task,Sprint)</name>
+        <nameStyle>18,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Vs0 f19 52 196 24 24 -47 14 #rect
+Vs0 f19 @|RichDialogInitStartIcon #fIcon
+Vs0 f20 type time.logging.management.VerificationDialog.VerificationDialogData #txt
+Vs0 f20 315 195 26 26 0 12 #rect
+Vs0 f20 @|RichDialogProcessEndIcon #fIcon
+Vs0 f21 expr out #txt
+Vs0 f21 76 208 315 208 #arcP
+Vs0 f22 actionDecl 'time.logging.management.VerificationDialog.VerificationDialogData out;
+' #txt
+Vs0 f22 actionTable 'out=in;
+' #txt
+Vs0 f22 actionCode 'ivy.log.info("WorkDate In Task: " + in.task.workDate);' #txt
+Vs0 f22 type time.logging.management.VerificationDialog.VerificationDialogData #txt
+Vs0 f22 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Initialize Task</name>
+        <nameStyle>15,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Vs0 f22 136 106 112 44 -37 -8 #rect
+Vs0 f22 @|StepIcon #fIcon
+Vs0 f23 expr out #txt
+Vs0 f23 77 128 136 128 #arcP
+Vs0 f8 expr out #txt
+Vs0 f8 248 128 315 128 #arcP
 >Proto Vs0 .type time.logging.management.VerificationDialog.VerificationDialogData #txt
 >Proto Vs0 .processKind HTML_DIALOG #txt
 >Proto Vs0 -8 -8 16 16 16 26 #rect
@@ -199,8 +258,6 @@ Vs0 f0 mainOut f2 tail #connect
 Vs0 f2 head f1 mainIn #connect
 Vs0 f3 mainOut f5 tail #connect
 Vs0 f5 head f4 mainIn #connect
-Vs0 f6 mainOut f8 tail #connect
-Vs0 f8 head f7 mainIn #connect
 Vs0 f11 mainOut f18 tail #connect
 Vs0 f18 head f17 mainIn #connect
 Vs0 f17 mainOut f14 tail #connect
@@ -209,3 +266,9 @@ Vs0 f9 mainOut f16 tail #connect
 Vs0 f16 head f15 mainIn #connect
 Vs0 f15 mainOut f13 tail #connect
 Vs0 f13 head f10 mainIn #connect
+Vs0 f19 mainOut f21 tail #connect
+Vs0 f21 head f20 mainIn #connect
+Vs0 f6 mainOut f23 tail #connect
+Vs0 f23 head f22 mainIn #connect
+Vs0 f22 mainOut f8 tail #connect
+Vs0 f8 head f7 mainIn #connect

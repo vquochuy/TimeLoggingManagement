@@ -2,3 +2,5 @@ VerificationDialogData #class
 time.logging.management.VerificationDialog #namespace
 task time.logging.management.Task #field
 task PERSISTENT #fieldModifier
+sprint time.logging.management.Sprint #field
+sprint PERSISTENT #fieldModifier
