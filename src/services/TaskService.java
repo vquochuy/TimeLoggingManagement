@@ -15,9 +15,10 @@ public class TaskService {
 		if(workDate != null){
 			List<Task> tasks = workDate.getTasks();
 			tasks.add(task);
-			workDate.setTasks(tasks);
+			int time = workDate.getWorkDateTime();
+			workDate.setWorkDateTime(time+ task.getTimeSpent());
+			workDate.setTasks(tasks);		
 			Ivy.repo().save(workDate);
-		}		
-	
+		}			
 	}
 }

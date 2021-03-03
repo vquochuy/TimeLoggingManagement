@@ -24,6 +24,7 @@ public class SprintService {
 			workDate.setName(date.toString());
 			workDate.setTasks(new ArrayList<>());			
 			workDate.setSprint(sprint);
+			workDate.setWorkDateTime(0);
 			Ivy.repo().save(workDate);
 			workDates.add(workDate);
 		});
