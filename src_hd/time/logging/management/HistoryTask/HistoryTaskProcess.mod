@@ -53,6 +53,9 @@ Ts0 @PushWFArc f35 '' #zField
 Ts0 @RichDialogMethodStart f36 '' #zField
 Ts0 @RichDialogProcessEnd f37 '' #zField
 Ts0 @PushWFArc f38 '' #zField
+Ts0 @RichDialogMethodStart f39 '' #zField
+Ts0 @RichDialogProcessEnd f40 '' #zField
+Ts0 @PushWFArc f41 '' #zField
 >Proto Ts0 Ts0 HistoryTaskProcess #zField
 Ts0 f0 guid 177F09FA5D65216F #txt
 Ts0 f0 type time.logging.management.HistoryTask.HistoryTaskData #txt
@@ -273,7 +276,7 @@ import time.logging.management.Task;
 SprintService sprintService = new SprintService();
 ivy.log.info("Selected  Sprint ID: "+in.selectedSprintID);
 in.selectedSprint =sprintService.getSprint(in.selectedSprintID);
-in.workDates = sprintService.getWorkDates(in.selectedSprintID);
+in.workDates = sprintService.getWorkDates(in.selectedSprintID, ivy.session.getSessionUser());
 ivy.log.info("Current User: "+ ivy.session.getSessionUser());
 in.task.userName = ivy.session.getSessionUser().getFullName();' #txt
 Ts0 f21 type time.logging.management.HistoryTask.HistoryTaskData #txt
@@ -408,6 +411,33 @@ Ts0 f37 403 1075 26 26 0 12 #rect
 Ts0 f37 @|RichDialogProcessEndIcon #fIcon
 Ts0 f38 expr out #txt
 Ts0 f38 77 1088 403 1088 #arcP
+Ts0 f39 guid 177FC50EC3A7D506 #txt
+Ts0 f39 type time.logging.management.HistoryTask.HistoryTaskData #txt
+Ts0 f39 method updateSelected() #txt
+Ts0 f39 disableUIEvents false #txt
+Ts0 f39 inParameterDecl 'ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent methodEvent = event as ch.ivyteam.ivy.richdialog.exec.RdMethodCallEvent;
+<> param = methodEvent.getInputArguments();
+' #txt
+Ts0 f39 outParameterDecl '<java.lang.Boolean isValid> result;
+' #txt
+Ts0 f39 outParameterMapAction 'result.isValid=true;
+' #txt
+Ts0 f39 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>updateSelected()</name>
+        <nameStyle>16,5,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Ts0 f39 51 1155 26 26 -47 15 #rect
+Ts0 f39 @|RichDialogMethodStartIcon #fIcon
+Ts0 f40 type time.logging.management.HistoryTask.HistoryTaskData #txt
+Ts0 f40 403 1171 26 26 0 12 #rect
+Ts0 f40 @|RichDialogProcessEndIcon #fIcon
+Ts0 f41 expr out #txt
+Ts0 f41 76 1168 403 1183 #arcP
 >Proto Ts0 .type time.logging.management.HistoryTask.HistoryTaskData #txt
 >Proto Ts0 .processKind HTML_DIALOG #txt
 >Proto Ts0 -8 -8 16 16 16 26 #rect
@@ -444,3 +474,5 @@ Ts0 f33 mainOut f34 tail #connect
 Ts0 f34 head f31 mainIn #connect
 Ts0 f36 mainOut f38 tail #connect
 Ts0 f38 head f37 mainIn #connect
+Ts0 f39 mainOut f41 tail #connect
+Ts0 f41 head f40 mainIn #connect

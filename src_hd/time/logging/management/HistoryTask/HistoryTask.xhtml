@@ -21,23 +21,24 @@
 							update="myForm" />
 					</p:selectOneMenu>
 					<p:commandButton value="Create Task" update="myForm"
-						action="#{logic.nextView('CreateTask')}" id="nextButton" />
+						action="#{logic.nextView('CreateTask')}" id="nextButton"/>
 				</div>
-
+		
 
 				<p:repeat value="#{data.workDates}" var="workDate">
 					<div>
 						<div>#{workDate.name} "Hours:" #{workDate.workDateTime}</div>
-						<p:repeat value="#{workDate.tasks}" var="task">
-								<p:outputLabel value="#{task.summary}" style="margin-left: 20px;"></p:outputLabel>
-								<p:outputLabel value="#{task.userName}"></p:outputLabel>
-								<p:outputLabel value="#{task.timeSpent}"></p:outputLabel>
-					
+						<p:repeat value="#{workDate.userTasks}" var="userTask">
+							<!-- <p:outputLabel value="#{userTask.summary}" style="margin-left: 20px;"></p:outputLabel> -->
+							<p:outputLabel value="#{task.userName}"></p:outputLabel>
+							<br />
+							<p:outputLabel value="#{task.timeSpent}"></p:outputLabel>
+
 						</p:repeat>
 					</div>
 				</p:repeat>
 
-			
+
 			</h:form>
 		</ui:define>
 	</ui:composition>

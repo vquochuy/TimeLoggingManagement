@@ -1,16 +1,14 @@
 package services;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.ecs.rtf.Row;
 
 import time.logging.management.Sprint;
 import time.logging.management.Task;
@@ -18,6 +16,7 @@ import time.logging.management.UserTask;
 import time.logging.management.WorkDate;
 import ch.ivyteam.ivy.environment.Ivy;
 import ch.ivyteam.ivy.security.IRole;
+import ch.ivyteam.ivy.security.IUser;
 
 public class SprintService {
 	private static final String SCRUM_MASTER_ROLE_NAME = "ScrumMaster";
@@ -99,7 +98,8 @@ public class SprintService {
 	}
 
 	public UserTask getUserTask(String userTaskID, WorkDate workDate) {
-		if(workDate.getUserTasks().isEmpty()) return null;
+		if (workDate.getUserTasks().isEmpty())
+			return null;
 		return workDate.getUserTasks().stream()
 				.filter(ut -> userTaskID.equalsIgnoreCase(ut.getUserName()))
 				.findAny().orElse(null);
@@ -116,7 +116,7 @@ public class SprintService {
 		if (userTasks.isEmpty() || userTask == null) {
 			userTask = new UserTask();
 			List<Task> tasks = new ArrayList<>();
-			userTask.setUserName(task.getUserName());			
+			userTask.setUserName(task.getUserName());
 			tasks.add(task);
 			userTask.setTasks(tasks);
 			workDate.getUserTasks().add(userTask);
@@ -125,7 +125,8 @@ public class SprintService {
 			int userIndex = workDate.getUserTasks().indexOf(userTask);
 			workDate.getUserTasks().set(userIndex, userTask);
 		}
-		userTask.setTotalHours(userTask.getTotalHours() != null ? userTask.getTotalHours() + task.getTimeSpent(): task.getTimeSpent());
+		userTask.setTotalHours(userTask.getTotalHours() != null ? userTask
+				.getTotalHours() + task.getTimeSpent() : task.getTimeSpent());
 		Ivy.repo().save(task);
 		Ivy.repo().save(userTask);
 		Ivy.repo().save(workDate);
@@ -137,6 +138,21 @@ public class SprintService {
 	public List<WorkDate> getWorkDatesByUser(String sprintID) {
 		Sprint sprint = getSprint(sprintID);
 		return sprint.getWorkDates();
-	}	
-	
+	}
+
+	public List<WorkDate> getWorkDates(String sprintID, IUser user) {
+		Sprint sprint = getSprint(sprintID);
+		return sprint
+				.getWorkDates()
+				.stream()
+				.filter(wd -> wd
+						.getUserTasks()
+						.stream()
+						.anyMatch(
+								ut -> ut.getUserName().equalsIgnoreCase(
+										user.getFullName())))
+				.collect(Collectors.toList());
+
+	}
+
 }

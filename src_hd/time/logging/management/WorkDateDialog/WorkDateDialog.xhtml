@@ -19,7 +19,7 @@
 							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
 						<p:ajax event="valueChange" listener="#{logic.update}"
 							update="myForm" />
-					</p:selectOneMenu>					
+					</p:selectOneMenu>
 				</div>
 
 
@@ -27,14 +27,19 @@
 					<div>
 						<div>#{workDate.name} "Hours:" #{workDate.workDateTime}</div>
 						<p:repeat value="#{workDate.userTasks}" var="userTask">
-								<p:outputLabel value="#{userTask.userName}" style="margin-left: 20px;"></p:outputLabel>
-								<p:outputLabel value="#{userTask.totalHours}"></p:outputLabel>
-					
+							<p:outputLabel value="#{userTask.userName}"
+								style="margin-left: 20px;"></p:outputLabel>
+							<p:outputLabel value="#{userTask.totalHours}"></p:outputLabel>
+
 						</p:repeat>
 					</div>
 				</p:repeat>
 
-			
+				<p:commandButton value="XLS" styleClass="p-mr-2 p-mb-2">
+					<p:dataExporter type="xls" target="tbl" fileName="products"
+						postProcessor="#{sprintBean.postProcessXLS}" />
+				</p:commandButton>
+
 			</h:form>
 		</ui:define>
 	</ui:composition>
