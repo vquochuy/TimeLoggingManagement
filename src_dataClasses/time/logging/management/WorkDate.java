@@ -7,7 +7,7 @@ package time.logging.management;
 public class WorkDate extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 2142770793536367379L;
+  private static final long serialVersionUID = -3732508511410115406L;
 
   private time.logging.management.Sprint sprint;
 
@@ -107,6 +107,26 @@ public class WorkDate extends ch.ivyteam.ivy.scripting.objects.CompositeObject
   public void setWorkDateTime(java.lang.Integer _workDateTime)
   {
     workDateTime = _workDateTime;
+  }
+
+  private java.util.List<time.logging.management.UserTask> userTasks;
+
+  /**
+   * Gets the field userTasks.
+   * @return the value of the field userTasks; may be null.
+   */
+  public java.util.List<time.logging.management.UserTask> getUserTasks()
+  {
+    return userTasks;
+  }
+
+  /**
+   * Sets the field userTasks.
+   * @param _userTasks the new value of the field userTasks.
+   */
+  public void setUserTasks(java.util.List<time.logging.management.UserTask> _userTasks)
+  {
+    userTasks = _userTasks;
   }
 
 }

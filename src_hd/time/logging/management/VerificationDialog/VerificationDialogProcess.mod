@@ -178,7 +178,6 @@ Vs0 f15 actionDecl 'time.logging.management.VerificationDialog.VerificationDialo
 Vs0 f15 actionTable 'out=in;
 ' #txt
 Vs0 f15 actionCode 'import services.SprintService;
-import services.TaskService;
 in.task.isVerified = true;
 ivy.log.info("Task info : "+in.task);
 ivy.log.info("Verify - Sprint id "+ in.task.workDate.sprint.id);

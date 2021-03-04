@@ -17,6 +17,16 @@
             <nullPermitted>false</nullPermitted>
         </outputParameter>
     </method>
+    <method>
+        <name>checkUser</name>
+        <description></description>
+        <outputParameter>
+            <name>isValid</name>
+            <description></description>
+            <parameterType>Boolean</parameterType>
+            <nullPermitted>false</nullPermitted>
+        </outputParameter>
+    </method>
     <startMethod>
         <name>start</name>
         <description>Default dialog start method.</description>

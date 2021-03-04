@@ -8,12 +8,12 @@ import time.logging.management.Sprint;
 
 @ManagedBean
 public class SprintBean {
-/*	private String selectedSprintID;
-	
+	private String selectedSprintID;
+
 	public String getSelectedSprintID() {
 		return selectedSprintID;
 	}
-	
+
 	public void setSelectedSprintID(String selectedSprintID) {
 		this.selectedSprintID = selectedSprintID;
 	}
@@ -21,12 +21,11 @@ public class SprintBean {
 	public Sprint getSelectedSprint() {
 		if (StringUtils.isBlank(selectedSprintID)) {
 			Sprint def = new Sprint();
-			def.setId(0);
 			def.setName("default");
 			return def;
 		}
 		SprintService sprintService = new SprintService();
 		return sprintService.getSprint(selectedSprintID);
-	}	*/
-	
+	}
+
 }

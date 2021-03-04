@@ -7,25 +7,35 @@
 	xmlns:pe="http://primefaces.org/ui/extensions"
 	xmlns:pm="http://primefaces.org/mobile">
 <h:body>
-	<ui:composition template="/layouts/basic.xhtml">
-		<ui:define name="title">WorkItem</ui:define>
+	<ui:composition template="/layouts/full.xhtml">
+		<ui:define name="title">TaskDialog</ui:define>
 		<ui:define name="content">
-			<h3>
-			</h3>
+			<h:form id="myForm">
+				<h3>History Tasks</h3>
+				<div>
+					<p:selectOneMenu id="selectMenu" value="#{data.selectedSprintID}">
+						<f:selectItem itemLabel="Select One" itemValue="" />
+						<f:selectItems value="#{data.sprints}" var="sprint"
+							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
+						<p:ajax event="valueChange" listener="#{logic.update}"
+							update="myForm" />
+					</p:selectOneMenu>					
+				</div>
+
+
+				<p:repeat value="#{data.workDates}" var="workDate">
+					<div>
+						<div>#{workDate.name} "Hours:" #{workDate.workDateTime}</div>
+						<p:repeat value="#{workDate.userTasks}" var="userTask">
+								<p:outputLabel value="#{userTask.userName}" style="margin-left: 20px;"></p:outputLabel>
+								<p:outputLabel value="#{userTask.totalHours}"></p:outputLabel>
+					
+						</p:repeat>
+					</div>
+				</p:repeat>
+
 			
-			<h:form id="form">
-				<h:panelGrid columns="2">
-					<f:facet name="header">
-						<p:messages></p:messages>
-					</f:facet>
-					
-					
-					
-					<br />
-					<p:commandButton actionListener="#{logic.close}" value="Proceed" update="form" icon="ui-icon-check" />
-				</h:panelGrid>
 			</h:form>
-			
 		</ui:define>
 	</ui:composition>
 </h:body>

@@ -30,6 +30,11 @@ Tt0 @PushWFArc f7 '' #zField
 Tt0 @Alternative f16 '' #zField
 Tt0 @PushWFArc f17 '' #zField
 Tt0 @PushWFArc f9 '' #zField
+Tt0 @StartRequest f18 '' #zField
+Tt0 @EndTask f19 '' #zField
+Tt0 @RichDialog f21 '' #zField
+Tt0 @PushWFArc f22 '' #zField
+Tt0 @PushWFArc f20 '' #zField
 >Proto Tt0 Tt0 TimeLoggingManagement #zField
 Tt0 f0 outLink start.ivp #txt
 Tt0 f0 type time.logging.management.TimeLoggingManagementData #txt
@@ -239,6 +244,57 @@ Tt0 f17 expr out #txt
 Tt0 f17 143 512 208 512 #arcP
 Tt0 f9 expr in #txt
 Tt0 f9 240 512 360 512 #arcP
+Tt0 f18 outLink start3.ivp #txt
+Tt0 f18 type time.logging.management.TimeLoggingManagementData #txt
+Tt0 f18 inParamDecl '<> param;' #txt
+Tt0 f18 actionDecl 'time.logging.management.TimeLoggingManagementData out;
+' #txt
+Tt0 f18 guid 177FB7A0CCBAB194 #txt
+Tt0 f18 requestEnabled true #txt
+Tt0 f18 triggerEnabled false #txt
+Tt0 f18 callSignature start3() #txt
+Tt0 f18 caseData businessCase.attach=true #txt
+Tt0 f18 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>start3.ivp</name>
+    </language>
+</elementInfo>
+' #txt
+Tt0 f18 @C|.responsibility Everybody #txt
+Tt0 f18 113 689 30 30 -24 17 #rect
+Tt0 f18 @|StartRequestIcon #fIcon
+Tt0 f19 type time.logging.management.TimeLoggingManagementData #txt
+Tt0 f19 689 689 30 30 0 15 #rect
+Tt0 f19 @|EndIcon #fIcon
+Tt0 f21 targetWindow NEW #txt
+Tt0 f21 targetDisplay TOP #txt
+Tt0 f21 richDialogId time.logging.management.WorkDateDialog #txt
+Tt0 f21 startMethod start() #txt
+Tt0 f21 type time.logging.management.TimeLoggingManagementData #txt
+Tt0 f21 requestActionDecl '<> param;' #txt
+Tt0 f21 responseActionDecl 'time.logging.management.TimeLoggingManagementData out;
+' #txt
+Tt0 f21 responseMappingAction 'out=in;
+' #txt
+Tt0 f21 isAsynch false #txt
+Tt0 f21 isInnerRd false #txt
+Tt0 f21 userContext '* ' #txt
+Tt0 f21 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<elementInfo>
+    <language>
+        <name>Show Work Date Time Report</name>
+        <nameStyle>26,7
+</nameStyle>
+    </language>
+</elementInfo>
+' #txt
+Tt0 f21 280 682 176 44 -81 -8 #rect
+Tt0 f21 @|RichDialogIcon #fIcon
+Tt0 f22 expr out #txt
+Tt0 f22 143 704 280 704 #arcP
+Tt0 f20 expr out #txt
+Tt0 f20 456 704 689 704 #arcP
 >Proto Tt0 .type time.logging.management.TimeLoggingManagementData #txt
 >Proto Tt0 .processKind NORMAL #txt
 >Proto Tt0 .xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -249,9 +305,12 @@ Tt0 f9 240 512 360 512 #arcP
         <swimlaneLabel>Scrum Master
 </swimlaneLabel>
         <swimlaneLabel>System</swimlaneLabel>
+        <swimlaneLabel>Work Date Time Report
+</swimlaneLabel>
     </language>
     <swimlaneOrientation>false</swimlaneOrientation>
-    <swimlaneSize>576</swimlaneSize>
+    <swimlaneSize>768</swimlaneSize>
+    <swimlaneSize>192</swimlaneSize>
     <swimlaneSize>192</swimlaneSize>
     <swimlaneSize>192</swimlaneSize>
     <swimlaneSize>192</swimlaneSize>
@@ -259,11 +318,14 @@ Tt0 f9 240 512 360 512 #arcP
     <swimlaneColor gradient="false">-3355393</swimlaneColor>
     <swimlaneColor gradient="false">-13057</swimlaneColor>
     <swimlaneColor gradient="false">-3342388</swimlaneColor>
+    <swimlaneColor gradient="false">-52</swimlaneColor>
     <swimlaneType>POOL</swimlaneType>
     <swimlaneType>LANE_IN_POOL</swimlaneType>
     <swimlaneType>LANE_IN_POOL</swimlaneType>
     <swimlaneType>LANE_IN_POOL</swimlaneType>
+    <swimlaneType>LANE_IN_POOL</swimlaneType>
     <swimlaneSpaceBefore>32</swimlaneSpaceBefore>
+    <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
     <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
     <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
     <swimlaneSpaceBefore>0</swimlaneSpaceBefore>
@@ -287,3 +349,7 @@ Tt0 f5 mainOut f17 tail #connect
 Tt0 f17 head f16 in #connect
 Tt0 f16 out f9 tail #connect
 Tt0 f9 head f8 mainIn #connect
+Tt0 f18 mainOut f22 tail #connect
+Tt0 f22 head f21 mainIn #connect
+Tt0 f21 mainOut f20 tail #connect
+Tt0 f20 head f19 mainIn #connect

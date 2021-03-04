@@ -27,7 +27,7 @@
 					<h:outputText value="#{data.task.timeSpent}"></h:outputText>	
 					<h:outputText value="Reason"></h:outputText>			
 					<p:inputTextarea value="#{data.task.rejectedReason}"></p:inputTextarea>
-					<p:commandButton actionListener="#{logic.verify}" value="Verify" update="form" icon="ui-icon-check" />
+					<p:commandButton actionListener="#{logic.verify}" value="Verify" update="form" icon="ui-icon-check" styleClass="btn btn-primary"/>
 					<p:commandButton actionListener="#{logic.declice}" value="Decline" update="form" />
 				</h:panelGrid>
 			</h:form>

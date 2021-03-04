@@ -2,3 +2,9 @@ WorkDateDialogData #class
 time.logging.management.WorkDateDialog #namespace
 workDate time.logging.management.WorkDate #field
 workDate PERSISTENT #fieldModifier
+sprints java.util.List<time.logging.management.Sprint> #field
+sprints PERSISTENT #fieldModifier
+selectedSprintID String #field
+selectedSprintID PERSISTENT #fieldModifier
+workDates java.util.List<time.logging.management.WorkDate> #field
+workDates PERSISTENT #fieldModifier

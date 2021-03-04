@@ -10,3 +10,5 @@ tasks java.util.List<time.logging.management.Task> #field
 tasks PERSISTENT #fieldModifier
 workDateTime Integer #field
 workDateTime PERSISTENT #fieldModifier
+userTasks java.util.List<time.logging.management.UserTask> #field
+userTasks PERSISTENT #fieldModifier
