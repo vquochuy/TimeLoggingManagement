@@ -177,12 +177,14 @@ Vs0 f15 actionDecl 'time.logging.management.VerificationDialog.VerificationDialo
 ' #txt
 Vs0 f15 actionTable 'out=in;
 ' #txt
-Vs0 f15 actionCode 'import services.TaskService;
+Vs0 f15 actionCode 'import services.SprintService;
+import services.TaskService;
 in.task.isVerified = true;
 ivy.log.info("Task info : "+in.task);
 ivy.log.info("Verify - Sprint id "+ in.task.workDate.sprint.id);
-TaskService taskService = new TaskService();
-taskService.save(in.task);' #txt
+SprintService sprintService = new SprintService();
+sprintService.addTask(in.task.sprintID,in.task.workDateID ,in.task);
+' #txt
 Vs0 f15 type time.logging.management.VerificationDialog.VerificationDialogData #txt
 Vs0 f15 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <elementInfo>

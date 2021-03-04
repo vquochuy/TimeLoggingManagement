@@ -12,7 +12,7 @@
 		<ui:define name="content">
 			<h:form id="myForm">
 				<h3>History Tasks</h3>
-				<div class="p-field p-col-12 p-md-4">
+				<div>
 					<p:selectOneMenu id="selectMenu"
 						value="#{data.selectedSprintID}">
 						<f:selectItem itemLabel="Select One" itemValue="" />
@@ -20,9 +20,9 @@
 							itemLabel="#{sprint.name}" itemValue="#{sprint.id}" />
 						<p:ajax event="valueChange" listener="#{logic.update}" update="myForm"/>
 					</p:selectOneMenu>
-				</div>
-				<p:commandButton value="Create Task" update="myForm"
+					<p:commandButton value="Create Task" update="myForm"
 					action="#{logic.nextView('CreateTask')}" id="nextButton" />
+				</div>		
 
 				
 				<p:repeat value="#{data.workDates}" var="workDate">

@@ -270,7 +270,7 @@ import time.logging.management.Task;
 SprintService sprintService = new SprintService();
 ivy.log.info("Selected  Sprint ID: "+in.selectedSprintID);
 in.selectedSprint =sprintService.getSprint(in.selectedSprintID);
-in.workDates = WorkDateService.getWorkDates(in.selectedSprintID);
+in.workDates = sprintService.getWorkDates(in.selectedSprintID);
 ivy.log.info("Current User: "+ ivy.session.getSessionUser());
 in.task.userName = ivy.session.getSessionUser().getFullName();' #txt
 Ts0 f21 type time.logging.management.HistoryTask.HistoryTaskData #txt
@@ -320,6 +320,8 @@ Ts0 f26 actionCode 'import services.SprintService;
 SprintService sprintService = new SprintService();
 ivy.log.info("Selected WorkDate ID: "+ in.selectedWorkDateID);
 in.task.workDate = sprintService.getWorkDate(in.selectedWorkDateID ,in.selectedSprint);
+in.task.sprintID = in.selectedSprintID;
+in.task.workDateID = in.selectedWorkDateID;
 ivy.log.info("Selected Sprint in task"+ in.selectedSprint.id);' #txt
 Ts0 f26 type time.logging.management.HistoryTask.HistoryTaskData #txt
 Ts0 f26 @C|.xml '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>

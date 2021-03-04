@@ -16,5 +16,7 @@ rejectedReason String #field
 rejectedReason PERSISTENT #fieldModifier
 paymentKind String #field
 paymentKind PERSISTENT #fieldModifier
-sprint String #field
-sprint PERSISTENT #fieldModifier
+sprintID String #field
+sprintID PERSISTENT #fieldModifier
+workDateID String #field
+workDateID PERSISTENT #fieldModifier

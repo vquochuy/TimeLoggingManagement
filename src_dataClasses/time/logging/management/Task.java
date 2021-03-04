@@ -7,7 +7,7 @@ package time.logging.management;
 public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
 {
   /** SerialVersionUID */
-  private static final long serialVersionUID = 8950915733905275645L;
+  private static final long serialVersionUID = -8965450540903722100L;
 
   private time.logging.management.WorkDate workDate;
 
@@ -169,24 +169,44 @@ public class Task extends ch.ivyteam.ivy.scripting.objects.CompositeObject
     paymentKind = _paymentKind;
   }
 
-  private java.lang.String sprint;
+  private java.lang.String sprintID;
 
   /**
-   * Gets the field sprint.
-   * @return the value of the field sprint; may be null.
+   * Gets the field sprintID.
+   * @return the value of the field sprintID; may be null.
    */
-  public java.lang.String getSprint()
+  public java.lang.String getSprintID()
   {
-    return sprint;
+    return sprintID;
   }
 
   /**
-   * Sets the field sprint.
-   * @param _sprint the new value of the field sprint.
+   * Sets the field sprintID.
+   * @param _sprintID the new value of the field sprintID.
    */
-  public void setSprint(java.lang.String _sprint)
+  public void setSprintID(java.lang.String _sprintID)
   {
-    sprint = _sprint;
+    sprintID = _sprintID;
+  }
+
+  private java.lang.String workDateID;
+
+  /**
+   * Gets the field workDateID.
+   * @return the value of the field workDateID; may be null.
+   */
+  public java.lang.String getWorkDateID()
+  {
+    return workDateID;
+  }
+
+  /**
+   * Sets the field workDateID.
+   * @param _workDateID the new value of the field workDateID.
+   */
+  public void setWorkDateID(java.lang.String _workDateID)
+  {
+    workDateID = _workDateID;
   }
 
 }
